@@ -383,6 +383,7 @@ export const useChatHandler = () => {
       setIsGenerating(false)
       setFirstTokenReceived(false)
     } catch (error) {
+      console.error("Error in handleSendMessage:", error)
       setIsGenerating(false)
       setFirstTokenReceived(false)
       setUserInput(startingInput)

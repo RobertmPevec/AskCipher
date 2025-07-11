@@ -415,9 +415,12 @@ export const handleCreateMessages = async (
     image_paths: []
   }
 
+  // Check if this is a mock assistant (UUIDs starting with 00000000)
+  const isMockAssistant = selectedAssistant?.id?.startsWith("00000000")
+
   const finalAssistantMessage: TablesInsert<"messages"> = {
     chat_id: currentChat.id,
-    assistant_id: selectedAssistant?.id || null,
+    assistant_id: isMockAssistant ? null : selectedAssistant?.id || null,
     user_id: profile.user_id,
     content: generatedText,
     model: modelData.modelId,

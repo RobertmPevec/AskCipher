@@ -12,10 +12,19 @@ export const getAssistantToolsByAssistantId = async (assistantId: string) => {
       `
     )
     .eq("id", assistantId)
-    .single()
+    .maybeSingle()
 
-  if (!assistantTools) {
+  if (error) {
     throw new Error(error.message)
+  }
+
+  // Return empty structure if assistant not found
+  if (!assistantTools) {
+    return {
+      id: assistantId,
+      name: "Unknown Assistant",
+      tools: []
+    }
   }
 
   return assistantTools

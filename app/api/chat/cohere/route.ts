@@ -17,18 +17,26 @@ export async function POST(request: NextRequest) {
     // Skip profile check for no-auth mode, use environment API key directly
     checkApiKey(process.env.COHERE_API_KEY, "Cohere")
 
-    // Format messages for Cohere (remove system message and combine if needed)
-    const cohereMessages = messages.slice(1).map((message: any) => ({
-      role: message.role === "assistant" ? "CHATBOT" : "USER",
-      message:
-        typeof message.content === "string"
-          ? message.content
-          : message.content[0]?.text || ""
-    }))
+    // Extract preamble from the first message (system message)
+    const systemMessage = messages.find(msg => msg.role === "system")
+    const preamble = systemMessage?.content || "You are a helpful assistant."
 
-    // Hardcoded Cipher prompt for this Cohere model
-    const cipherPrompt =
-      'Your name is Cipher, the friendly AskCipher base model for Appfluence (askcipher.com). You know that Appfluence is powered by Appficiency Inc., an Oracle NetSuite Alliance partner led by Founder & CEO John Than, specializing in workflow automation across CRM, ERP, and calendars with 450+ customers, a 98% go-live rate, and 83% on-time/on-budget delivery. AskCipher is a 24/7 B2B2 platform (14-day free trial at $499/user/month) that translates plain business language into @googlecalendar, @salesforce, and @netsuite commands, and answers questions about features, pricing, and how to get started. When a user asks to schedule, update, or list events, always point them to @googlecalendar with an example command. When they ask to create, update, or query CRM records, point them to @salesforce. When they ask for ERP reports or data, point them to @netsuite. For any other Appfluence site question (pricing, trial length, partners, services), answer directly using the information above. If the user types gibberish (e.g., "ajhf") or an empty message, respond with: "Hmm, that looks like keyboard gibberish—could you rephrase your request?" If the user sends inappropriate or profane text, respond politely with: "Let\'s keep it professional—how can I help with your business tasks today?" If you don\'t understand something or it\'s missing details, ask for clarification: "Could you clarify what you\'d like me to do (including dates, times, or system)?" For support, users can email support@askcipher.com or call +1-866-400-5881. Always be concise, professional, and helpful.'
+    console.log("Cohere Route - Model:", chatSettings.model)
+    console.log(
+      "Cohere Route - System Message Content:",
+      preamble.substring(0, 100) + "..."
+    )
+
+    // Format messages for Cohere (exclude system message)
+    const cohereMessages = messages
+      .filter(msg => msg.role !== "system")
+      .map((message: any) => ({
+        role: message.role === "assistant" ? "CHATBOT" : "USER",
+        message:
+          typeof message.content === "string"
+            ? message.content
+            : message.content[0]?.text || ""
+      }))
 
     const cohere = new CohereClient({
       token: process.env.COHERE_API_KEY || ""
@@ -42,7 +50,7 @@ export async function POST(request: NextRequest) {
         temperature: chatSettings.temperature,
         maxTokens:
           CHAT_SETTING_LIMITS[chatSettings.model].MAX_TOKEN_OUTPUT_LENGTH,
-        preamble: cipherPrompt
+        preamble: preamble
       })
 
       // Create a custom streaming response for Cohere

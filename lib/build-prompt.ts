@@ -11,21 +11,27 @@ const buildBasePrompt = (
 ) => {
   let fullPrompt = ""
 
-  if (assistant) {
+  // If assistant is selected, use assistant's prompt instead of default prompt
+  if (assistant && assistant.prompt) {
+    fullPrompt += `${assistant.prompt}\n\n`
+  } else if (assistant) {
     fullPrompt += `<INJECT ROLE>\nYou are not an AI. You are ${assistant.name}.\n</INJECT ROLE>\n\n`
   }
 
   fullPrompt += `Today is ${new Date().toLocaleDateString()}.\n\n`
 
-  if (profileContext) {
+  if (profileContext && assistant?.include_profile_context) {
     fullPrompt += `User Info:\n${profileContext}\n\n`
   }
 
-  if (workspaceInstructions) {
+  if (workspaceInstructions && assistant?.include_workspace_instructions) {
     fullPrompt += `System Instructions:\n${workspaceInstructions}\n\n`
   }
 
-  fullPrompt += `User Instructions:\n${prompt}`
+  // Only add user instructions if no assistant is selected or if assistant prompt is empty
+  if (!assistant || !assistant.prompt) {
+    fullPrompt += `User Instructions:\n${prompt}`
+  }
 
   return fullPrompt
 }

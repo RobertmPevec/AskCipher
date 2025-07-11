@@ -14,10 +14,19 @@ export const getAssistantCollectionsByAssistantId = async (
       `
     )
     .eq("id", assistantId)
-    .single()
+    .maybeSingle()
 
-  if (!assistantCollections) {
+  if (error) {
     throw new Error(error.message)
+  }
+
+  // Return empty structure if assistant not found
+  if (!assistantCollections) {
+    return {
+      id: assistantId,
+      name: "Unknown Assistant",
+      collections: []
+    }
   }
 
   return assistantCollections

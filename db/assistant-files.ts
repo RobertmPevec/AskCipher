@@ -12,10 +12,19 @@ export const getAssistantFilesByAssistantId = async (assistantId: string) => {
       `
     )
     .eq("id", assistantId)
-    .single()
+    .maybeSingle()
 
-  if (!assistantFiles) {
+  if (error) {
     throw new Error(error.message)
+  }
+
+  // Return empty structure if assistant not found
+  if (!assistantFiles) {
+    return {
+      id: assistantId,
+      name: "Unknown Assistant",
+      files: []
+    }
   }
 
   return assistantFiles
