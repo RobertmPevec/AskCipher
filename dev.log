@@ -31,3 +31,159 @@ Reverting to using defaultLocale: en
  ✓ Compiled in 2.5s (367 modules)
  ✓ Compiled in 2.6s (367 modules)
  ✓ Compiled in 2.6s (367 modules)
+ ✓ Compiled in 809ms (353 modules)
+ ✓ Compiled in 1245ms (353 modules)
+ ✓ Compiled in 259ms (354 modules)
+ ✓ Compiled in 114ms (354 modules)
+ ✓ Compiled in 361ms (354 modules)
+   Reload env: .env.local
+ ✓ Compiled in 684ms (440 modules)
+ ✓ Compiled in 3.3s (454 modules)
+ ✓ Compiled in 200ms (354 modules)
+ ✓ Compiled in 235ms (354 modules)
+ ✓ Compiled in 486ms (368 modules)
+ ✓ Compiled in 286ms (354 modules)
+ ✓ Compiled in 468ms (368 modules)
+ ✓ Compiled in 1724ms (368 modules)
+ ✓ Compiled in 1691ms (368 modules)
+ ✓ Compiled in 1201ms (368 modules)
+ ✓ Compiled in 685ms (368 modules)
+ ⨯ ./components/utility/global-state.tsx
+Error: 
+  [31mx[0m Expected ',', got 'You'
+    ,-[[36;1;4m/Users/robertpevec/Documents/GitHub/AskCipher/components/utility/global-state.tsx[0m:87:1]
+ [2m87[0m | If the user types gibberish (e.g., “ajhf”) or an empty message, respond with: “Hmm, that looks like keyboard gibberish—could you rephrase your request?”  \
+ [2m88[0m | If the user sends inappropriate or profane text, respond politely with: “Let’s keep it professional—how can I help with your business tasks today?”  \
+ [2m89[0m | If you don’t understand something or it’s missing details, ask for clarification: “Could you clarify what you’d like me to do (including dates, times, or system)?”  \
+ [2m90[0m | Always be concise, professional, and helpful."You know Appfluence (askcipher.com) is the parent company providing workflow automation across CRM, ERP, and calendars; it’s led by our CEO Jane Doe; for support email support@askcipher.com or call +1-866-400-5881.
+    : [31;1m                                              ^^^[0m
+ [2m91[0m | ,
+ [2m92[0m |     temperature: 0.5,
+ [2m93[0m |     contextLength: 4000,
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/utility/global-state.tsx
+ ✓ Compiled in 1525ms (368 modules)
+ ⨯ ./components/utility/global-state.tsx
+Error: 
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4m/Users/robertpevec/Documents/GitHub/AskCipher/components/utility/global-state.tsx[0m:78:1]
+ [2m78[0m |       const [chatMessages, setChatMessages] = useState<ChatMessage[]>([])
+ [2m79[0m |       const [chatSettings, setChatSettings] = useState<ChatSettings>({
+ [2m80[0m |         model: "360576eb-cb9c-47a7-ae94-f6f719723bd2-ft",
+ [2m81[0m | [31;1m,[0m[31;1m-[0m[31;1m>[0m     prompt: "You are Cipher, the friendly AskCipher base model for Appfluence (askcipher.com).  \
+ [2m82[0m | [31;1m|[0m   You know that AskCipher is a 24/7 B2B2 platform (14-day free trial) that translates plain business language into @googlecalendar, @salesforce, and @netsuite commands, and answers questions about features, pricing, and how to get started.  \
+ [2m83[0m | [31;1m|[0m   When a user asks to schedule, update, or list events, always point them to @googlecalendar with an example command.  \
+ [2m84[0m | [31;1m|[0m   When they ask to create, update, or query CRM records, point them to @salesforce.  \
+ [2m85[0m | [31;1m|[0m   When they ask for ERP reports or data, point them to @netsuite.  \
+ [2m86[0m | [31;1m|[0m   For any other Appfluence site question (pricing, trial length, partners, features), answer directly using the information above.  \
+ [2m87[0m | [31;1m|[0m   If the user types gibberish (e.g., “ajhf”) or an empty message, respond with: “Hmm, that looks like keyboard gibberish—could you rephrase your request?”  \
+ [2m88[0m | [31;1m|[0m   If the user sends inappropriate or profane text, respond politely with: “Let’s keep it professional—how can I help with your business tasks today?”  \
+ [2m89[0m | [31;1m|[0m   If you don’t understand something or it’s missing details, ask for clarification: “Could you clarify what you’d like me to do (including dates, times, or system)?”  \
+ [2m90[0m | [31;1m`[0m[31;1m-[0m[31;1m>[0m Always be concise, professional, and helpful.You know Appfluence (askcipher.com) is the parent company providing workflow automation across CRM, ERP, and calendars; it’s led by our CEO Jane Doe; for support email support@askcipher.com or call +1-866-400-5881.
+ [2m91[0m |     ",
+ [2m92[0m |         temperature: 0.5,
+ [2m93[0m |         contextLength: 4000,
+    `----
+
+  [31mx[0m Unterminated string constant
+    ,-[[36;1;4m/Users/robertpevec/Documents/GitHub/AskCipher/components/utility/global-state.tsx[0m:88:1]
+ [2m88[0m | If the user sends inappropriate or profane text, respond politely with: “Let’s keep it professional—how can I help with your business tasks today?”  \
+ [2m89[0m | If you don’t understand something or it’s missing details, ask for clarification: “Could you clarify what you’d like me to do (including dates, times, or system)?”  \
+ [2m90[0m | Always be concise, professional, and helpful.You know Appfluence (askcipher.com) is the parent company providing workflow automation across CRM, ERP, and calendars; it’s led by our CEO Jane Doe; for support email support@askcipher.com or call +1-866-400-5881.
+ [2m91[0m | ",
+    : [31;1m^^[0m
+ [2m92[0m |     temperature: 0.5,
+ [2m93[0m |     contextLength: 4000,
+ [2m94[0m |     includeProfileContext: true,
+    `----
+
+  [31mx[0m Expected ',', got 'string literal (,, ",
+  [31m|[0m )'
+    ,-[[36;1;4m/Users/robertpevec/Documents/GitHub/AskCipher/components/utility/global-state.tsx[0m:88:1]
+ [2m88[0m | If the user sends inappropriate or profane text, respond politely with: “Let’s keep it professional—how can I help with your business tasks today?”  \
+ [2m89[0m | If you don’t understand something or it’s missing details, ask for clarification: “Could you clarify what you’d like me to do (including dates, times, or system)?”  \
+ [2m90[0m | Always be concise, professional, and helpful.You know Appfluence (askcipher.com) is the parent company providing workflow automation across CRM, ERP, and calendars; it’s led by our CEO Jane Doe; for support email support@askcipher.com or call +1-866-400-5881.
+ [2m91[0m | ",
+    : [31;1m^^[0m
+ [2m92[0m |     temperature: 0.5,
+ [2m93[0m |     contextLength: 4000,
+ [2m94[0m |     includeProfileContext: true,
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/utility/global-state.tsx
+ ✓ Compiled in 1880ms (368 modules)
+ ✓ Compiled in 1787ms (368 modules)
+ ✓ Compiled in 640ms (368 modules)
+ ✓ Compiled in 1904ms (283 modules)
+ ⨯ ./components/utility/global-state.tsx
+Error: 
+  [31mx[0m Expression expected
+    ,-[[36;1;4m/Users/robertpevec/Documents/GitHub/AskCipher/components/utility/global-state.tsx[0m:87:1]
+ [2m87[0m | If the user types gibberish (e.g., “ajhf”) or an empty message, respond with: “Hmm, that looks like keyboard gibberish—could you rephrase your request?”  \
+ [2m88[0m | If the user sends inappropriate or profane text, respond politely with: “Let’s keep it professional—how can I help with your business tasks today?”  \
+ [2m89[0m | If you don’t understand something or it’s missing details, ask for clarification: “Could you clarify what you’d like me to do (including dates, times, or system)?”  \
+ [2m90[0m | Always be concise, professional, and helpful.You know Appfluence (askcipher.com) is the parent company providing workflow automation across CRM, ERP, and calendars; it’s led by our CEO Jane Doe; for support email support@askcipher.com or call +1-866-400-5881."/,
+    : [31;1m                                                                                                                                                                                                                                                                       ^[0m
+ [2m91[0m |     temperature: 0.5,
+ [2m92[0m |     contextLength: 4000,
+ [2m93[0m |     includeProfileContext: true,
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/utility/global-state.tsx
+ ⨯ ./components/utility/global-state.tsx
+Error: 
+  [31mx[0m Expected unicode escape
+    ,-[[36;1;4m/Users/robertpevec/Documents/GitHub/AskCipher/components/utility/global-state.tsx[0m:87:1]
+ [2m87[0m | If the user types gibberish (e.g., “ajhf”) or an empty message, respond with: “Hmm, that looks like keyboard gibberish—could you rephrase your request?”  \
+ [2m88[0m | If the user sends inappropriate or profane text, respond politely with: “Let’s keep it professional—how can I help with your business tasks today?”  \
+ [2m89[0m | If you don’t understand something or it’s missing details, ask for clarification: “Could you clarify what you’d like me to do (including dates, times, or system)?”  \
+ [2m90[0m | Always be concise, professional, and helpful.You know Appfluence (askcipher.com) is the parent company providing workflow automation across CRM, ERP, and calendars; it’s led by our CEO Jane Doe; for support email support@askcipher.com or call +1-866-400-5881." \,
+    : [31;1m                                                                                                                                                                                                                                                                       ^[0m
+ [2m91[0m |     temperature: 0.5,
+ [2m92[0m |     contextLength: 4000,
+ [2m93[0m |     includeProfileContext: true,
+    `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/utility/global-state.tsx
+ ✓ Compiled in 807ms (368 modules)
+ ✓ Compiled in 1009ms (368 modules)
+ ✓ Compiled in 1207ms (368 modules)
+ ✓ Compiled in 384ms (368 modules)
+ ✓ Compiled in 494ms (368 modules)
+ ✓ Compiled in 444ms (368 modules)
+ ✓ Compiled in 201ms (354 modules)
+ ✓ Compiled in 1975ms (368 modules)
+ ✓ Compiled in 462ms (368 modules)
+ ✓ Compiled in 188ms (354 modules)
+ ✓ Compiled in 215ms (354 modules)
+ ✓ Compiled in 765ms (368 modules)
+ ✓ Compiled in 360ms (368 modules)
+ ✓ Compiled in 1021ms (368 modules)
+ ✓ Compiled in 971ms (368 modules)
+ ✓ Compiled in 592ms (368 modules)
+ ✓ Compiled in 1211ms (368 modules)
+ ✓ Compiled in 321ms (368 modules)
+ ✓ Compiled in 817ms (368 modules)
+ ✓ Compiled in 454ms (368 modules)
+ ✓ Compiled in 805ms (368 modules)
+ ✓ Compiled in 325ms (354 modules)
+ ✓ Compiled in 1337ms (368 modules)
+ ✓ Compiled in 715ms (368 modules)
+ ✓ Compiled in 674ms (368 modules)

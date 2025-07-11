@@ -13,7 +13,7 @@ export const MOCK_PROFILE: Tables<"profiles"> = {
   has_onboarded: true,
   image_url: "",
   image_path: "",
-  profile_context: "You are a helpful AI assistant.",
+  profile_context: "",
   display_name: "Default User",
   use_azure_openai: false,
   username: "default_user",
@@ -30,7 +30,8 @@ export const MOCK_PROFILE: Tables<"profiles"> = {
   openai_organization_id: null,
   perplexity_api_key: null,
   azure_openai_embeddings_id: null,
-  openrouter_api_key: null
+  openrouter_api_key: null,
+  cohere_api_key: null
 }
 
 export const MOCK_WORKSPACE: Tables<"workspaces"> = {
@@ -44,8 +45,8 @@ export const MOCK_WORKSPACE: Tables<"workspaces"> = {
   instructions: "Be helpful and concise.",
   is_home: true,
   default_context_length: 4096,
-  default_model: "gpt-3.5-turbo",
-  default_prompt: "You are a helpful AI assistant.",
+  default_model: "360576eb-cb9c-47a7-ae94-f6f719723bd2-ft",
+  default_prompt: "",
   default_temperature: 0.5,
   embeddings_provider: "openai",
   include_profile_context: true,

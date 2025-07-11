@@ -7,6 +7,7 @@ export type LLMID =
   | MistralLLMID
   | GroqLLMID
   | PerplexityLLMID
+  | CohereLLMID
 
 // OpenAI Models (UPDATED 5/13/24)
 export type OpenAILLMID =
@@ -60,6 +61,12 @@ export type PerplexityLLMID =
   | "sonar-small-online" // Sonar Small Online
   | "sonar-medium-chat" // Sonar Medium Chat
   | "sonar-medium-online" // Sonar Medium Online
+
+// Cohere Models
+export type CohereLLMID =
+  | "360576eb-cb9c-47a7-ae94-f6f719723bd2-ft" // Custom Fine-tuned Model
+  | "command-r" // Command R
+  | "command-r-plus" // Command R Plus
 
 export interface LLM {
   modelId: LLMID
