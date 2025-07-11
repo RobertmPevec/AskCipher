@@ -1,4 +1,8 @@
-import $RefParser from "@apidevtools/json-schema-ref-parser"
+// Conditional import to avoid webpack issues in browser
+const $RefParser =
+  typeof window === "undefined"
+    ? require("@apidevtools/json-schema-ref-parser")
+    : null
 
 interface OpenAPIData {
   info: {

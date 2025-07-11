@@ -94,26 +94,28 @@ export const AssistantPicker: FC<AssistantPickerProps> = ({}) => {
                   }
                   onKeyDown={getKeyDownHandler(index)}
                 >
-                  {item.image_path ? (
-                    <Image
-                      src={
-                        assistantImages.find(
-                          image => image.path === item.image_path
-                        )?.url || ""
-                      }
-                      alt={item.name}
-                      width={32}
-                      height={32}
-                      className="rounded"
-                    />
-                  ) : (
-                    <IconRobotFace size={32} />
-                  )}
+                  <div className="shrink-0">
+                    {item.image_path ? (
+                      <Image
+                        src={
+                          assistantImages.find(
+                            image => image.path === item.image_path
+                          )?.url || ""
+                        }
+                        alt={item.name}
+                        width={32}
+                        height={32}
+                        className="rounded-full"
+                      />
+                    ) : (
+                      <IconRobotFace className="text-primary" size={32} />
+                    )}
+                  </div>
 
-                  <div className="ml-3 flex flex-col">
-                    <div className="font-bold">{item.name}</div>
+                  <div className="ml-3 flex min-w-0 flex-1 flex-col">
+                    <div className="text-sm font-bold">{item.name}</div>
 
-                    <div className="truncate text-sm opacity-80">
+                    <div className="whitespace-normal break-words text-xs opacity-80">
                       {item.description || "No description."}
                     </div>
                   </div>

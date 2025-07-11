@@ -6,6 +6,7 @@ import {
   IconBolt,
   IconCirclePlus,
   IconPlayerStopFilled,
+  IconRobotFace,
   IconSend
 } from "@tabler/icons-react"
 import Image from "next/image"
@@ -189,23 +190,35 @@ export const ChatInput: FC<ChatInputProps> = ({}) => {
           ))}
 
         {selectedAssistant && (
-          <div className="border-primary mx-auto flex w-fit items-center space-x-2 rounded-lg border p-1.5">
-            {selectedAssistant.image_path && (
+          <div className="border-primary mx-auto flex w-fit max-w-md items-start space-x-3 rounded-lg border p-3">
+            {selectedAssistant.image_path ? (
               <Image
-                className="rounded"
+                className="rounded-full"
                 src={
                   assistantImages.find(
                     img => img.path === selectedAssistant.image_path
                   )?.base64
                 }
-                width={28}
-                height={28}
+                width={32}
+                height={32}
                 alt={selectedAssistant.name}
+              />
+            ) : (
+              <IconRobotFace
+                className="text-primary mt-0.5 shrink-0"
+                size={32}
               />
             )}
 
-            <div className="text-sm font-bold">
-              Working with {selectedAssistant.name}
+            <div className="min-w-0 flex-1">
+              <div className="text-sm font-semibold">
+                Working with {selectedAssistant.name}
+              </div>
+              {selectedAssistant.description && (
+                <div className="text-muted-foreground mt-1 break-words text-xs">
+                  {selectedAssistant.description}
+                </div>
+              )}
             </div>
           </div>
         )}

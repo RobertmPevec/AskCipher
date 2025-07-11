@@ -187,3 +187,61 @@ Import trace for requested module:
  ✓ Compiled in 1337ms (368 modules)
  ✓ Compiled in 715ms (368 modules)
  ✓ Compiled in 674ms (368 modules)
+ ✓ Compiled in 1117ms (368 modules)
+ ✓ Compiled in 715ms (354 modules)
+   Reload env: .env.local
+ ✓ Compiled in 1178ms (440 modules)
+   Reload env: .env.local
+ ✓ Compiled in 252ms (440 modules)
+   Reload env: .env.local
+ ✓ Compiled in 952ms (440 modules)
+   Reload env: .env.local
+ ✓ Compiled in 473ms (440 modules)
+   Reload env: .env.local
+ ✓ Compiled in 185ms (440 modules)
+   Reload env: .env.local
+ ✓ Compiled in 141ms (440 modules)
+   Reload env: .env.local
+ ✓ Compiled in 157ms (440 modules)
+   Reload env: .env.local
+ ✓ Compiled in 134ms (440 modules)
+   Reload env: .env.local
+ ✓ Compiled in 380ms (440 modules)
+   Reload env: .env.local
+ ✓ Compiled in 141ms (440 modules)
+   Reload env: .env.local
+ ✓ Compiled in 487ms (440 modules)
+   Reload env: .env.local
+ ✓ Compiled in 358ms (440 modules)
+ ✓ Compiled in 1180ms (354 modules)
+ ✓ Compiled in 603ms (354 modules)
+ ✓ Compiled in 2.7s (368 modules)
+ ✓ Compiled in 2.6s (368 modules)
+[Error: ENOENT: no such file or directory, stat '/Users/robertpevec/Documents/GitHub/AskCipher/.next/cache/webpack/client-development/2.pack.gz'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/Users/robertpevec/Documents/GitHub/AskCipher/.next/cache/webpack/client-development/2.pack.gz'
+}
+[Error: ENOENT: no such file or directory, stat '/Users/robertpevec/Documents/GitHub/AskCipher/.next/cache/webpack/client-development/2.pack.gz'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/Users/robertpevec/Documents/GitHub/AskCipher/.next/cache/webpack/client-development/2.pack.gz'
+}
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, stat '/Users/robertpevec/Documents/GitHub/AskCipher/.next/cache/webpack/client-development/2.pack.gz'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/Users/robertpevec/Documents/GitHub/AskCipher/.next/cache/webpack/client-development/2.pack.gz'
+}
+ ⨯ unhandledRejection: [Error: ENOENT: no such file or directory, stat '/Users/robertpevec/Documents/GitHub/AskCipher/.next/cache/webpack/client-development/2.pack.gz'] {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/Users/robertpevec/Documents/GitHub/AskCipher/.next/cache/webpack/client-development/2.pack.gz'
+}
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, stat '/Users/robertpevec/Documents/GitHub/AskCipher/.next/cache/webpack/client-development/2.pack.gz'
+ ✓ Compiled in 1096ms (368 modules)
+ ✓ Compiled in 390ms (368 modules)
+ ✓ Compiled in 433ms (368 modules)
