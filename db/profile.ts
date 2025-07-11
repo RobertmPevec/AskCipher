@@ -1,18 +1,10 @@
 import { supabase } from "@/lib/supabase/browser-client"
 import { TablesInsert, TablesUpdate } from "@/supabase/types"
+import { MOCK_PROFILE } from "@/lib/mock-data"
 
 export const getProfileByUserId = async (userId: string) => {
-  const { data: profile, error } = await supabase
-    .from("profiles")
-    .select("*")
-    .eq("user_id", userId)
-    .single()
-
-  if (!profile) {
-    throw new Error(error.message)
-  }
-
-  return profile
+  // Return mock profile to bypass authentication
+  return MOCK_PROFILE
 }
 
 export const getProfilesByUserId = async (userId: string) => {

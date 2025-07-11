@@ -1,5 +1,6 @@
 import { supabase } from "@/lib/supabase/browser-client"
 import { TablesInsert, TablesUpdate } from "@/supabase/types"
+import { MOCK_USER_ID, MOCK_WORKSPACE_ID } from "@/lib/mock-data"
 
 export const getPromptById = async (promptId: string) => {
   const { data: prompt, error } = await supabase
@@ -16,23 +17,60 @@ export const getPromptById = async (promptId: string) => {
 }
 
 export const getPromptWorkspacesByWorkspaceId = async (workspaceId: string) => {
-  const { data: workspace, error } = await supabase
-    .from("workspaces")
-    .select(
-      `
-      id,
-      name,
-      prompts (*)
-    `
-    )
-    .eq("id", workspaceId)
-    .single()
+  // Get all prompts from the database for this workspace
+  try {
+    // First get the prompt IDs for this workspace
+    const { data: promptWorkspaces, error: workspaceError } = await supabase
+      .from("prompt_workspaces")
+      .select("prompt_id")
+      .eq("workspace_id", workspaceId)
 
-  if (!workspace) {
-    throw new Error(error.message)
+    if (workspaceError) {
+      console.warn("Error fetching prompt workspaces:", workspaceError)
+      return {
+        id: workspaceId,
+        name: "Mock Workspace",
+        prompts: []
+      }
+    }
+
+    if (!promptWorkspaces || promptWorkspaces.length === 0) {
+      return {
+        id: workspaceId,
+        name: "Mock Workspace",
+        prompts: []
+      }
+    }
+
+    // Then get the actual prompts
+    const promptIds = promptWorkspaces.map(pw => pw.prompt_id)
+    const { data: prompts, error: promptsError } = await supabase
+      .from("prompts")
+      .select("*")
+      .in("id", promptIds)
+
+    if (promptsError) {
+      console.warn("Error fetching prompts:", promptsError)
+      return {
+        id: workspaceId,
+        name: "Mock Workspace",
+        prompts: []
+      }
+    }
+
+    return {
+      id: workspaceId,
+      name: "Mock Workspace",
+      prompts: prompts || []
+    }
+  } catch (error) {
+    console.warn("Error in getPromptWorkspacesByWorkspaceId:", error)
+    return {
+      id: workspaceId,
+      name: "Mock Workspace",
+      prompts: []
+    }
   }
-
-  return workspace
 }
 
 export const getPromptWorkspacesByPromptId = async (promptId: string) => {
@@ -59,9 +97,15 @@ export const createPrompt = async (
   prompt: TablesInsert<"prompts">,
   workspace_id: string
 ) => {
+  // Ensure we use the mock user ID for authentication bypass
+  const promptWithMockUser = {
+    ...prompt,
+    user_id: MOCK_USER_ID
+  }
+
   const { data: createdPrompt, error } = await supabase
     .from("prompts")
-    .insert([prompt])
+    .insert([promptWithMockUser])
     .select("*")
     .single()
 
@@ -70,9 +114,9 @@ export const createPrompt = async (
   }
 
   await createPromptWorkspace({
-    user_id: createdPrompt.user_id,
+    user_id: MOCK_USER_ID,
     prompt_id: createdPrompt.id,
-    workspace_id
+    workspace_id: MOCK_WORKSPACE_ID
   })
 
   return createdPrompt
@@ -82,9 +126,15 @@ export const createPrompts = async (
   prompts: TablesInsert<"prompts">[],
   workspace_id: string
 ) => {
+  // Ensure we use the mock user ID for all prompts
+  const promptsWithMockUser = prompts.map(prompt => ({
+    ...prompt,
+    user_id: MOCK_USER_ID
+  }))
+
   const { data: createdPrompts, error } = await supabase
     .from("prompts")
-    .insert(prompts)
+    .insert(promptsWithMockUser)
     .select("*")
 
   if (error) {
@@ -93,9 +143,9 @@ export const createPrompts = async (
 
   await createPromptWorkspaces(
     createdPrompts.map(prompt => ({
-      user_id: prompt.user_id,
+      user_id: MOCK_USER_ID,
       prompt_id: prompt.id,
-      workspace_id
+      workspace_id: MOCK_WORKSPACE_ID
     }))
   )
 

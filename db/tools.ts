@@ -16,23 +16,31 @@ export const getToolById = async (toolId: string) => {
 }
 
 export const getToolWorkspacesByWorkspaceId = async (workspaceId: string) => {
-  const { data: workspace, error } = await supabase
-    .from("workspaces")
-    .select(
-      `
-      id,
-      name,
-      tools (*)
-    `
-    )
-    .eq("id", workspaceId)
-    .single()
-
-  if (!workspace) {
-    throw new Error(error.message)
+  // Mock implementation - return workspace with empty tools array
+  return {
+    id: workspaceId,
+    name: "Mock Workspace",
+    tools: []
   }
 
-  return workspace
+  // Original database query commented out:
+  // const { data: workspace, error } = await supabase
+  //   .from("workspaces")
+  //   .select(
+  //     `
+  //     id,
+  //     name,
+  //     tools (*)
+  //   `
+  //   )
+  //   .eq("id", workspaceId)
+  //   .single()
+
+  // if (!workspace) {
+  //   throw new Error(error.message)
+  // }
+
+  // return workspace
 }
 
 export const getToolWorkspacesByToolId = async (toolId: string) => {

@@ -16,23 +16,31 @@ export const getPresetById = async (presetId: string) => {
 }
 
 export const getPresetWorkspacesByWorkspaceId = async (workspaceId: string) => {
-  const { data: workspace, error } = await supabase
-    .from("workspaces")
-    .select(
-      `
-      id,
-      name,
-      presets (*)
-    `
-    )
-    .eq("id", workspaceId)
-    .single()
-
-  if (!workspace) {
-    throw new Error(error.message)
+  // Mock implementation - return workspace with empty presets array
+  return {
+    id: workspaceId,
+    name: "Mock Workspace",
+    presets: []
   }
 
-  return workspace
+  // Original database query commented out:
+  // const { data: workspace, error } = await supabase
+  //   .from("workspaces")
+  //   .select(
+  //     `
+  //     id,
+  //     name,
+  //     presets (*)
+  //   `
+  //   )
+  //   .eq("id", workspaceId)
+  //   .single()
+
+  // if (!workspace) {
+  //   throw new Error(error.message)
+  // }
+
+  // return workspace
 }
 
 export const getPresetWorkspacesByPresetId = async (presetId: string) => {

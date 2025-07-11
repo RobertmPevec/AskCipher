@@ -16,23 +16,31 @@ export const getModelById = async (modelId: string) => {
 }
 
 export const getModelWorkspacesByWorkspaceId = async (workspaceId: string) => {
-  const { data: workspace, error } = await supabase
-    .from("workspaces")
-    .select(
-      `
-      id,
-      name,
-      models (*)
-    `
-    )
-    .eq("id", workspaceId)
-    .single()
-
-  if (!workspace) {
-    throw new Error(error.message)
+  // Mock implementation - return workspace with empty models array
+  return {
+    id: workspaceId,
+    name: "Mock Workspace",
+    models: []
   }
 
-  return workspace
+  // Original database query commented out:
+  // const { data: workspace, error } = await supabase
+  //   .from("workspaces")
+  //   .select(
+  //     `
+  //     id,
+  //     name,
+  //     models (*)
+  //   `
+  //   )
+  //   .eq("id", workspaceId)
+  //   .single()
+
+  // if (!workspace) {
+  //   throw new Error(error.message)
+  // }
+
+  // return workspace
 }
 
 export const getModelWorkspacesByModelId = async (modelId: string) => {

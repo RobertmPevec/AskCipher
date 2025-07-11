@@ -2,7 +2,12 @@ import { useChatHandler } from "@/components/chat/chat-hooks/use-chat-handler"
 import { ChatbotUIContext } from "@/context/context"
 import { createFolder } from "@/db/folders"
 import { ContentType } from "@/types"
-import { IconFolderPlus, IconPlus } from "@tabler/icons-react"
+import {
+  IconFolderPlus,
+  IconPlus,
+  IconEdit,
+  IconPencil
+} from "@tabler/icons-react"
 import { FC, useContext, useState } from "react"
 import { Button } from "../ui/button"
 import { CreateAssistant } from "./items/assistants/create-assistant"
@@ -12,6 +17,7 @@ import { CreateModel } from "./items/models/create-model"
 import { CreatePreset } from "./items/presets/create-preset"
 import { CreatePrompt } from "./items/prompts/create-prompt"
 import { CreateTool } from "./items/tools/create-tool"
+import { EditPromptsModal } from "./items/prompts/edit-prompts-modal"
 
 interface SidebarCreateButtonsProps {
   contentType: ContentType
@@ -33,6 +39,7 @@ export const SidebarCreateButtons: FC<SidebarCreateButtonsProps> = ({
   const [isCreatingAssistant, setIsCreatingAssistant] = useState(false)
   const [isCreatingTool, setIsCreatingTool] = useState(false)
   const [isCreatingModel, setIsCreatingModel] = useState(false)
+  const [isEditingPrompts, setIsEditingPrompts] = useState(false)
 
   const handleCreateFolder = async () => {
     if (!profile) return
@@ -96,20 +103,57 @@ export const SidebarCreateButtons: FC<SidebarCreateButtonsProps> = ({
   }
 
   return (
-    <div className="flex w-full space-x-2">
-      <Button className="flex h-[36px] grow" onClick={getCreateFunction()}>
-        <IconPlus className="mr-1" size={20} />
-        New{" "}
-        {contentType.charAt(0).toUpperCase() +
-          contentType.slice(1, contentType.length - 1)}
-      </Button>
-
-      {hasData && (
-        <Button className="size-[36px] p-1" onClick={handleCreateFolder}>
-          <IconFolderPlus size={20} />
+    <div className="space-y-2">
+      {/* Main create button and folder/edit button row */}
+      <div className="flex w-full gap-2">
+        <Button className="flex h-[36px] flex-1" onClick={getCreateFunction()}>
+          <IconPlus className="mr-1" size={20} />
+          New{" "}
+          {contentType.charAt(0).toUpperCase() +
+            contentType.slice(1, contentType.length - 1)}
         </Button>
+
+        {hasData && (
+          <Button
+            className="size-[36px] shrink-0 p-1"
+            onClick={
+              contentType === "prompts"
+                ? () => setIsEditingPrompts(true)
+                : handleCreateFolder
+            }
+          >
+            {contentType === "prompts" ? (
+              <IconEdit size={20} />
+            ) : (
+              <IconFolderPlus size={20} />
+            )}
+          </Button>
+        )}
+      </div>
+
+      {/* Prompt buttons - only show on chats page */}
+      {contentType === "chats" && (
+        <div className="flex w-full gap-2">
+          <Button
+            className="flex h-[36px] flex-1"
+            onClick={() => setIsCreatingPrompt(true)}
+            variant="outline"
+          >
+            <IconPencil className="mr-1" size={20} />
+            New Prompt
+          </Button>
+
+          <Button
+            className="size-[36px] shrink-0 p-1"
+            onClick={() => setIsEditingPrompts(true)}
+            variant="outline"
+          >
+            <IconEdit size={20} />
+          </Button>
+        </div>
       )}
 
+      {/* All modals */}
       {isCreatingPrompt && (
         <CreatePrompt
           isOpen={isCreatingPrompt}
@@ -150,6 +194,13 @@ export const SidebarCreateButtons: FC<SidebarCreateButtonsProps> = ({
         <CreateModel
           isOpen={isCreatingModel}
           onOpenChange={setIsCreatingModel}
+        />
+      )}
+
+      {isEditingPrompts && (
+        <EditPromptsModal
+          isOpen={isEditingPrompts}
+          onOpenChange={setIsEditingPrompts}
         />
       )}
     </div>

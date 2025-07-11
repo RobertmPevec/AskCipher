@@ -2,16 +2,20 @@ import { supabase } from "@/lib/supabase/browser-client"
 import { TablesInsert, TablesUpdate } from "@/supabase/types"
 
 export const getFoldersByWorkspaceId = async (workspaceId: string) => {
-  const { data: folders, error } = await supabase
-    .from("folders")
-    .select("*")
-    .eq("workspace_id", workspaceId)
+  // Mock implementation - return empty array instead of querying database
+  return []
 
-  if (!folders) {
-    throw new Error(error.message)
-  }
+  // Original database query commented out:
+  // const { data: folders, error } = await supabase
+  //   .from("folders")
+  //   .select("*")
+  //   .eq("workspace_id", workspaceId)
 
-  return folders
+  // if (!folders) {
+  //   throw new Error(error.message)
+  // }
+
+  // return folders
 }
 
 export const createFolder = async (folder: TablesInsert<"folders">) => {

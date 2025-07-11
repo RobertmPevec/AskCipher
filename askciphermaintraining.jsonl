@@ -1,0 +1,49 @@
+{"messages":[{"role":"User","content":"What’s my subscription status?"},{"role":"Chatbot","content":" You can view your subscription status under Account > Billing in the dashboard. It shows your plan, next billing date, and usage."}]}
+{"messages":[{"role":"User","content":"How do I connect Salesforce via the UI?"},{"role":"Chatbot","content":" Go to Account > Integrations, click Connect next to Salesforce, and follow the OAuth prompts."}]}
+{"messages":[{"role":"User","content":"Fetch the contact record for Acme Inc."},{"role":"Chatbot","content":" Use: “@salesforce get contact Acme Inc.” to retrieve that record."}]}
+{"messages":[{"role":"User","content":"Show me Q1 revenue by region."},{"role":"Chatbot","content":" Use: “@netsuite run report revenue_by_region quarter=Q1 year=2025”."}]}
+{"messages":[{"role":"User","content":"When is my next invoice due?"},{"role":"Chatbot","content":" Your next invoice is due on 2025-08-01. You can see details under Account > Billing."}]}
+{"messages":[{"role":"User","content":"Explain Magic UI scheduling."},{"role":"Chatbot","content":" Magic UI lets you write natural commands like “schedule meeting” and it converts them into @googlecalendar actions."}]}
+{"messages":[{"role":"User","content":"I can’t log in—help!"},{"role":"Chatbot","content":" If you’re having login issues, try resetting your password via the login page or contact support@askcipher.com."}]}
+{"messages":[{"role":"User","content":"Enable two-factor authentication."},{"role":"Chatbot","content":" Go to Account > Security, toggle on Two-Factor Authentication, and follow the setup steps."}]}
+{"messages":[{"role":"User","content":"Find all events containing 'demo' next week."},{"role":"Chatbot","content":" Use: “@googlecalendar list events filter='demo' from=2025-07-14 to=2025-07-20”."}]}
+{"messages":[{"role":"User","content":"Block out time daily from 12–1 PM."},{"role":"Chatbot","content":" Use: “@googlecalendar schedule recurring event 'Lunch Break' RRULE:FREQ=DAILY;BYHOUR=12;BYMINUTE=0;BYSECOND=0 DURATION=PT1H”."}]}
+{"messages":[{"role":"User","content":"Book the main conference room for Monday at 3 PM."},{"role":"Chatbot","content":" Use: “@googlecalendar schedule event 'Conference Room Booking' on 2025-07-14 at 3 PM location='Main Conf Room'.”"}]}
+{"messages":[{"role":"User","content":"List all demos scheduled this month."},{"role":"Chatbot","content":" Use: “@googlecalendar list events filter='demo' from=2025-07-01 to=2025-07-31”."}]}
+{"messages":[{"role":"User","content":"Add Sarah Lee to my team."},{"role":"Chatbot","content":" Go to Account > Team > Invite Members and enter Sarah’s email to add her."}]}
+{"messages":[{"role":"User","content":"Remove Michael Ross from the account."},{"role":"Chatbot","content":" Go to Account > Team, find Michael Ross, and click Remove User."}]}
+{"messages":[{"role":"User","content":"Change default language to Spanish."},{"role":"Chatbot","content":" Go to Account > Profile > Language and select Spanish, then log out and back in."}]}
+{"messages":[{"role":"User","content":"Turn off email notifications."},{"role":"Chatbot","content":" Go to Settings > Notifications and toggle off Email Alerts."}]}
+{"messages":[{"role":"User","content":"Do you comply with GDPR?"},{"role":"Chatbot","content":" Yes—we comply with GDPR. You can request data exports or deletions under Settings > Data & Privacy."}]}
+{"messages":[{"role":"User","content":"How do I get your SOC 2 report?"},{"role":"Chatbot","content":" Email compliance@askcipher.com with an NDA request, and we’ll share the SOC 2 report."}]}
+{"messages":[{"role":"User","content":"Who is the DPO?"},{"role":"Chatbot","content":" You can reach our Data Protection Officer at privacy@askcipher.com."}]}
+{"messages":[{"role":"User","content":"Request audit logs for last month."},{"role":"Chatbot","content":" Go to Security > Audit Logs, set the date filter, and click Export CSV."}]}
+{"messages":[{"role":"User","content":"How much data have I used?"},{"role":"Chatbot","content":" Usage metrics are under Analytics > Usage. You can see API calls, data processed, and more."}]}
+{"messages":[{"role":"User","content":"Reset my password link expired."},{"role":"Chatbot","content":" No problem—request a new reset link on the login page via “Forgot password?”."}]}
+{"messages":[{"role":"User","content":"Where can I find the developer SDK?"},{"role":"Chatbot","content":" SDKs are listed in Integration Docs under Developer Resources: Python, JavaScript, Java, and more."}]}
+{"messages":[{"role":"User","content":"What roles can I assign to users?"},{"role":"Chatbot","content":" We support Admin, Editor, Viewer, and Custom roles. Go to Account > Team to manage roles."}]}
+{"messages":[{"role":"User","content":"Promote John to Admin."},{"role":"Chatbot","content":" Go to Account > Team, click John’s profile, and change his role to Admin."}]}
+{"messages":[{"role":"User","content":"Downgrade Emily to Viewer."},{"role":"Chatbot","content":" Navigate to Account > Team, find Emily, and set her role to Viewer."}]}
+{"messages":[{"role":"User","content":"What platform versions are supported?"},{"role":"Chatbot","content":" We support the latest three major browser versions (Chrome, Firefox, Edge) and mobile browsers."}]}
+{"messages":[{"role":"User","content":"Import contacts from CSV."},{"role":"Chatbot","content":" Use: “@salesforce import contacts file=contacts.csv” after uploading the file in Integrations."}]}
+{"messages":[{"role":"User","content":"Export my customer list as PDF."},{"role":"Chatbot","content":" Use: “@salesforce export contacts format=pdf” to generate a PDF of your contacts."}]}
+{"messages":[{"role":"User","content":"Schedule a weekly sync every Tuesday at 9 AM."},{"role":"Chatbot","content":" Use: “@googlecalendar schedule recurring event 'Weekly Sync' RRULE:FREQ=WEEKLY;BYDAY=TU;BYHOUR=9;BYMINUTE=0”."}]}
+{"messages":[{"role":"User","content":"Set a daily reminder to check loads."},{"role":"Chatbot","content":" Use: “@googlecalendar schedule recurring event 'Check Loads' RRULE:FREQ=DAILY;BYHOUR=8;BYMINUTE=0”."}]}
+{"messages":[{"role":"User","content":"Convert an invoice to draft."},{"role":"Chatbot","content":" Use: “@netsuite update invoice INV-001 status=draft” to change the status."}]}
+{"messages":[{"role":"User","content":"Get the status of purchase order PO123."},{"role":"Chatbot","content":" Use: “@netsuite get purchase_order PO123 status”."}]}
+{"messages":[{"role":"User","content":"View my login history."},{"role":"Chatbot","content":" Go to Account > Security > Login History to view your recent logins."}]}
+{"messages":[{"role":"User","content":"Enable debug logging."},{"role":"Chatbot","content":" Debug logs can be toggled under Settings > Integrations > Debug Mode."}]}
+{"messages":[{"role":"User","content":"How do I use the Python SDK?"},{"role":"Chatbot","content":" Check the Python SDK guide in Integration Docs under Developer Resources."}]}
+{"messages":[{"role":"User","content":"Where do I download the Java SDK?"},{"role":"Chatbot","content":" Java SDK downloads are available in Integration Docs under Java Developer Resources."}]}
+{"messages":[{"role":"User","content":"Show me a demo video."},{"role":"Chatbot","content":" Watch our demo at https://askcipher.com/demo-video or via the Help menu in-app."}]}
+{"messages":[{"role":"User","content":"Who are your expert partners?"},{"role":"Chatbot","content":" We partner with leading consultancies in NetSuite, Salesforce, and Google Cloud—see Partners on our site."}]}
+{"messages":[{"role":"User","content":"Can I connect Zapier?"},{"role":"Chatbot","content":" Zapier isn’t integrated yet. We’ll announce it when available."}]}
+{"messages":[{"role":"User","content":"Enable mobile push notifications."},{"role":"Chatbot","content":" Go to Settings > Notifications > Mobile Push and toggle it On."}]}
+{"messages":[{"role":"User","content":"Support Slack integration?"},{"role":"Chatbot","content":" Slack isn’t supported currently—our integrations are Google Calendar, Salesforce, and NetSuite."}]}
+{"messages":[{"role":"User","content":"Add a note to opportunity OPP-456."},{"role":"Chatbot","content":" Use: “@salesforce add note to opportunity OPP-456 content='Your note here'”."}]}
+{"messages":[{"role":"User","content":"Schedule a birthday reminder for July 20."},{"role":"Chatbot","content":" Use: “@googlecalendar schedule event 'Birthday Reminder' on 2025-07-20 at 9 AM”."}]}
+{"messages":[{"role":"User","content":"Export usage metrics as CSV."},{"role":"Chatbot","content":" Go to Analytics > Usage, click Export CSV to download your metrics."}]}
+{"messages":[{"role":"User","content":"Regenerate my OAuth token."},{"role":"Chatbot","content":" Go to Account > Integrations, find the integration, and click Regenerate Token."}]}
+{"messages":[{"role":"User","content":"Where can I change my display name?"},{"role":"Chatbot","content":" Go to Account > Profile > Display Name to edit how your name appears."}]}
+{"messages":[{"role":"User","content":"How do I contact sales engineering?"},{"role":"Chatbot","content":" Email se@askcipher.com to reach our sales engineering team."}]}
+{"messages":[{"role":"User","content":"What’s your data backup schedule?"},{"role":"Chatbot","content":" We back up all data daily at 02:00 UTC with 30-day retention."}]}

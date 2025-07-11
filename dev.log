@@ -1,0 +1,33 @@
+
+> chatbot-ui@2.0.0 dev
+> next dev
+
+   ▲ Next.js 14.1.0
+   - Local:        http://localhost:3000
+   - Environments: .env.local
+
+ ✓ Ready in 1813ms
+ ✓ Compiled /middleware in 144ms (86 modules)
+No valid locales in accept-language header: *
+Reverting to using defaultLocale: en
+ ○ Compiling /[locale] ...
+ ✓ Compiled /[locale] in 3.9s (889 modules)
+ ✓ Compiled in 395ms (367 modules)
+
+ ⚠ metadata.metadataBase is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+ ✓ Compiled in 1134ms (367 modules)
+ ✓ Compiled in 383ms (367 modules)
+ ✓ Compiled in 300ms (367 modules)
+ ✓ Compiled in 472ms (367 modules)
+ ✓ Compiled in 1515ms (367 modules)
+ ✓ Compiled in 325ms (367 modules)
+ ✓ Compiled in 336ms (367 modules)
+ ✓ Compiled in 642ms (367 modules)
+ ✓ Compiled in 296ms (367 modules)
+ ✓ Compiled in 389ms (367 modules)
+ ✓ Compiled in 350ms (367 modules)
+ ✓ Compiled in 1523ms (367 modules)
+ ✓ Compiled in 1103ms (367 modules)
+ ✓ Compiled in 2.5s (367 modules)
+ ✓ Compiled in 2.6s (367 modules)
+ ✓ Compiled in 2.6s (367 modules)

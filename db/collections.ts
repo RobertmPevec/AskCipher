@@ -18,23 +18,31 @@ export const getCollectionById = async (collectionId: string) => {
 export const getCollectionWorkspacesByWorkspaceId = async (
   workspaceId: string
 ) => {
-  const { data: workspace, error } = await supabase
-    .from("workspaces")
-    .select(
-      `
-      id,
-      name,
-      collections (*)
-    `
-    )
-    .eq("id", workspaceId)
-    .single()
-
-  if (!workspace) {
-    throw new Error(error.message)
+  // Mock implementation - return workspace with empty collections array
+  return {
+    id: workspaceId,
+    name: "Mock Workspace",
+    collections: []
   }
 
-  return workspace
+  // Original database query commented out:
+  // const { data: workspace, error } = await supabase
+  //   .from("workspaces")
+  //   .select(
+  //     `
+  //     id,
+  //     name,
+  //     collections (*)
+  //   `
+  //   )
+  //   .eq("id", workspaceId)
+  //   .single()
+
+  // if (!workspace) {
+  //   throw new Error(error.message)
+  // }
+
+  // return workspace
 }
 
 export const getCollectionWorkspacesByCollectionId = async (

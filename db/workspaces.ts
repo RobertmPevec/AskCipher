@@ -1,47 +1,20 @@
 import { supabase } from "@/lib/supabase/browser-client"
 import { TablesInsert, TablesUpdate } from "@/supabase/types"
+import { MOCK_WORKSPACE, MOCK_WORKSPACE_ID } from "@/lib/mock-data"
 
 export const getHomeWorkspaceByUserId = async (userId: string) => {
-  const { data: homeWorkspace, error } = await supabase
-    .from("workspaces")
-    .select("*")
-    .eq("user_id", userId)
-    .eq("is_home", true)
-    .single()
-
-  if (!homeWorkspace) {
-    throw new Error(error.message)
-  }
-
-  return homeWorkspace.id
+  // Return mock workspace ID
+  return MOCK_WORKSPACE_ID
 }
 
 export const getWorkspaceById = async (workspaceId: string) => {
-  const { data: workspace, error } = await supabase
-    .from("workspaces")
-    .select("*")
-    .eq("id", workspaceId)
-    .single()
-
-  if (!workspace) {
-    throw new Error(error.message)
-  }
-
-  return workspace
+  // Return mock workspace
+  return MOCK_WORKSPACE
 }
 
 export const getWorkspacesByUserId = async (userId: string) => {
-  const { data: workspaces, error } = await supabase
-    .from("workspaces")
-    .select("*")
-    .eq("user_id", userId)
-    .order("created_at", { ascending: false })
-
-  if (!workspaces) {
-    throw new Error(error.message)
-  }
-
-  return workspaces
+  // Return array with mock workspace
+  return [MOCK_WORKSPACE]
 }
 
 export const createWorkspace = async (

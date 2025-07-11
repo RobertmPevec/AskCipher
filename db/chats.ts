@@ -12,17 +12,21 @@ export const getChatById = async (chatId: string) => {
 }
 
 export const getChatsByWorkspaceId = async (workspaceId: string) => {
-  const { data: chats, error } = await supabase
-    .from("chats")
-    .select("*")
-    .eq("workspace_id", workspaceId)
-    .order("created_at", { ascending: false })
+  // Mock implementation - return empty array instead of querying database
+  return []
 
-  if (!chats) {
-    throw new Error(error.message)
-  }
+  // Original database query commented out:
+  // const { data: chats, error } = await supabase
+  //   .from("chats")
+  //   .select("*")
+  //   .eq("workspace_id", workspaceId)
+  //   .order("created_at", { ascending: false })
 
-  return chats
+  // if (!chats) {
+  //   throw new Error(error.message)
+  // }
+
+  // return chats
 }
 
 export const createChat = async (chat: TablesInsert<"chats">) => {

@@ -153,48 +153,39 @@ export const GlobalState: FC<GlobalStateProps> = ({ children }) => {
   }, [])
 
   const fetchStartingData = async () => {
-    const session = (await supabase.auth.getSession()).data.session
+    // Bypass authentication - use mock data
+    const profile = await getProfileByUserId("mock-user")
+    setProfile(profile)
 
-    if (session) {
-      const user = session.user
+    const workspaces = await getWorkspacesByUserId("mock-user")
+    setWorkspaces(workspaces)
 
-      const profile = await getProfileByUserId(user.id)
-      setProfile(profile)
+    for (const workspace of workspaces) {
+      let workspaceImageUrl = ""
 
-      if (!profile.has_onboarded) {
-        return router.push("/setup")
+      if (workspace.image_path) {
+        workspaceImageUrl =
+          (await getWorkspaceImageFromStorage(workspace.image_path)) || ""
       }
 
-      const workspaces = await getWorkspacesByUserId(user.id)
-      setWorkspaces(workspaces)
+      if (workspaceImageUrl) {
+        const response = await fetch(workspaceImageUrl)
+        const blob = await response.blob()
+        const base64 = await convertBlobToBase64(blob)
 
-      for (const workspace of workspaces) {
-        let workspaceImageUrl = ""
-
-        if (workspace.image_path) {
-          workspaceImageUrl =
-            (await getWorkspaceImageFromStorage(workspace.image_path)) || ""
-        }
-
-        if (workspaceImageUrl) {
-          const response = await fetch(workspaceImageUrl)
-          const blob = await response.blob()
-          const base64 = await convertBlobToBase64(blob)
-
-          setWorkspaceImages(prev => [
-            ...prev,
-            {
-              workspaceId: workspace.id,
-              path: workspace.image_path,
-              base64: base64,
-              url: workspaceImageUrl
-            }
-          ])
-        }
+        setWorkspaceImages(prev => [
+          ...prev,
+          {
+            workspaceId: workspace.id,
+            path: workspace.image_path,
+            base64: base64,
+            url: workspaceImageUrl
+          }
+        ])
       }
-
-      return profile
     }
+
+    return profile
   }
 
   return (

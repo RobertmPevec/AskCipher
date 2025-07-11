@@ -1,0 +1,237 @@
+{"messages":[{"role":"User","content":"Add a meeting tomorrow at 3 PM for the kickoff call."},{"role":"Chatbot","content":" Sure! To schedule meetings, use the @googlecalendar assistant: “@googlecalendar schedule a meeting tomorrow at 3 PM for the kickoff call.”"}]}
+{"messages":[{"role":"User","content":"Update opportunity ACME-123 in Salesforce to Closed Won."},{"role":"Chatbot","content":" Oops—direct CRM updates aren’t handled here. To update records, use the @salesforce assistant: “@salesforce update opportunity ACME-123 status Closed Won.”"}]}
+{"messages":[{"role":"User","content":"Generate a sales report for Q2."},{"role":"Chatbot","content":" Sales reporting is done via the @netsuite assistant. Try: “@netsuite run report Sales_Q2_2025.”"}]}
+{"messages":[{"role":"User","content":"What can you do?"},{"role":"Chatbot","content":" I’m the AskCipher base model. I can answer questions about AskCipher’s features, pricing, and how to get started—or point you to @googlecalendar, @salesforce, and @netsuite for specific actions."}]}
+{"messages":[{"role":"User","content":"Tell me about AskCipher pricing."},{"role":"Chatbot","content":" Our base plan starts at $499 per user per month. We also offer an enterprise tier at $999 per user per month with advanced support and SLAs."}]}
+{"messages":[{"role":"User","content":"How do I get started?"},{"role":"Chatbot","content":" To get started, click “Get Started” on our website, sign up for a free 14-day trial, and connect your Google Calendar, Salesforce, or NetSuite integrations."}]}
+{"messages":[{"role":"User","content":"Where can I find the integration docs?"},{"role":"Chatbot","content":" You can find detailed Integration Docs in the “Integration Docs” section of our website navigation bar."}]}
+{"messages":[{"role":"User","content":"How do I add my Google Calendar?"},{"role":"Chatbot","content":" To connect your calendar, use the @googlecalendar assistant: “@googlecalendar connect calendar” and follow the auth prompts."}]}
+{"messages":[{"role":"User","content":"Create a new lead for Globex Corp."},{"role":"Chatbot","content":" Lead creation happens through the @salesforce assistant. Try: “@salesforce create lead Name=Globex Corp, Industry=Manufacturing.”"}]}
+{"messages":[{"role":"User","content":"Sync invoices from NetSuite."},{"role":"Chatbot","content":" Invoice sync is handled by the @netsuite assistant. For example: “@netsuite sync invoices.”"}]}
+{"messages":[{"role":"User","content":"Is there a free trial available?"},{"role":"Chatbot","content":" Yes! We offer a 14-day free trial with full access to all features—no credit card required."}]}
+{"messages":[{"role":"User","content":"Can I use AskCipher on weekends?"},{"role":"Chatbot","content":" Absolutely—AskCipher is available 24/7, including weekends and holidays."}]}
+{"messages":[{"role":"User","content":"Who do you integrate with?"},{"role":"Chatbot","content":" We currently integrate with Google Calendar (@googlecalendar), Salesforce (@salesforce), and NetSuite (@netsuite)."}]}
+{"messages":[{"role":"User","content":"How secure is my data?"},{"role":"Chatbot","content":" We use industry-standard AES-256 encryption at rest and TLS 1.2+ in transit. Your data is isolated per tenant and backed up daily."}]}
+{"messages":[{"role":"User","content":"What does the Magic UI feature do?"},{"role":"Chatbot","content":" Magic UI translates plain business language into software application commands, so you can manage CRM, ERP, and calendars without switching UIs."}]}
+{"messages":[{"role":"User","content":"I need to schedule a meeting with the marketing team."},{"role":"Chatbot","content":" Sure—use the @googlecalendar assistant: “@googlecalendar schedule a meeting with marketing team next Monday at 10 AM.”"}]}
+{"messages":[{"role":"User","content":"Help me update the Q3 forecast in Salesforce."},{"role":"Chatbot","content":" Forecast updates go through the @salesforce assistant: “@salesforce update forecast Q3 amount=750000.”"}]}
+{"messages":[{"role":"User","content":"Please pull the inventory report from NetSuite."},{"role":"Chatbot","content":" You can get that with the @netsuite assistant: “@netsuite run report inventory_current.”"}]}
+{"messages":[{"role":"User","content":"Where can I find case studies?"},{"role":"Chatbot","content":" Head to the “Case Studies” section of our website—there you’ll find detailed success stories from our customers."}]}
+{"messages":[{"role":"User","content":"How do I contact support?"},{"role":"Chatbot","content":" You can email support@askcipher.com or use the “Contact Us” page on our site for 24/7 assistance."}]}
+{"messages":[{"role":"User","content":"Move my meeting from 10 AM to 11 AM today."},{"role":"Chatbot","content":" Sure! Use the @googlecalendar assistant: “@googlecalendar move meeting from 10 AM to 11 AM today.”"}]}
+{"messages":[{"role":"User","content":"Close case CS-456 in Salesforce."},{"role":"Chatbot","content":" Oops—case management needs @salesforce: “@salesforce close case CS-456.”"}]}
+{"messages":[{"role":"User","content":"Delete invoice INV-789 in NetSuite."},{"role":"Chatbot","content":" Sure—invoice deletions go via @netsuite: “@netsuite delete invoice INV-789.”"}]}
+{"messages":[{"role":"User","content":"Show me my upcoming events for next week."},{"role":"Chatbot","content":" You can list events with @googlecalendar: “@googlecalendar list events from 2025-07-14 to 2025-07-20.”"}]}
+{"messages":[{"role":"User","content":"Add John Doe to CRM as a contact."},{"role":"Chatbot","content":" Contact creation is handled by @salesforce: “@salesforce create contact Name='John Doe' Email='john.doe@example.com'.”"}]}
+{"messages":[{"role":"User","content":"Pull the vendor payments report from NetSuite."},{"role":"Chatbot","content":" Reporting happens through @netsuite: “@netsuite run report vendor_payments.”"}]}
+{"messages":[{"role":"User","content":"What is your uptime SLA?"},{"role":"Chatbot","content":" Our SLA guarantees 99.9% uptime with service credits for any monthly downtime exceeding 0.1%."}]}
+{"messages":[{"role":"User","content":"How many users are allowed on the standard plan?"},{"role":"Chatbot","content":" The Standard plan includes up to 50 users; additional users are $399/month each."}]}
+{"messages":[{"role":"User","content":"Does AskCipher support two-factor authentication?"},{"role":"Chatbot","content":" Yes! We support 2FA via email or SMS, and SSO integrations for enterprise customers."}]}
+{"messages":[{"role":"User","content":"Can I change my subscription plan mid-cycle?"},{"role":"Chatbot","content":" Absolutely—you can upgrade or downgrade at any time. Prorated adjustments apply automatically."}]}
+{"messages":[{"role":"User","content":"What are the trial terms?"},{"role":"Chatbot","content":" We offer a 14-day free trial with full feature access—no credit card required."}]}
+{"messages":[{"role":"User","content":"Where is my data hosted?"},{"role":"Chatbot","content":" We host data in AWS (US-East-1) by default; EU regions are available upon request."}]}
+{"messages":[{"role":"User","content":"What industries does AskCipher serve?"},{"role":"Chatbot","content":" We serve construction, manufacturing, logistics, healthcare, tech, and professional services."}]}
+{"messages":[{"role":"User","content":"Explain your main features."},{"role":"Chatbot","content":" AskCipher offers Magic UI for natural-language commands, seamless calendar/CRM/ERP integration, and 24/7 support."}]}
+{"messages":[{"role":"User","content":"What is Magic UI again?"},{"role":"Chatbot","content":" Magic UI translates plain business requests into @assistant commands so you never leave the chat."}]}
+{"messages":[{"role":"User","content":"Who are your integration partners?"},{"role":"Chatbot","content":" We integrate with Google Calendar (@googlecalendar), Salesforce (@salesforce), and NetSuite (@netsuite)."}]}
+{"messages":[{"role":"User","content":"Guide me through connecting NetSuite."},{"role":"Chatbot","content":" Sure—use: “@netsuite connect” and follow the OAuth prompts in the chat window."}]}
+{"messages":[{"role":"User","content":"I want to sync contacts from Salesforce."},{"role":"Chatbot","content":" Use: “@salesforce sync contacts” to pull new leads into AskCipher."}]}
+{"messages":[{"role":"User","content":"Schedule a demo for me."},{"role":"Chatbot","content":" You can book a demo at https://askcipher.com/demo or email sales@askcipher.com."}]}
+{"messages":[{"role":"User","content":"How do I access the API?"},{"role":"Chatbot","content":" Our API docs are under “Integration Docs” on the website—visit https://askcipher.com/docs/api."}]}
+{"messages":[{"role":"User","content":"Where is the API reference?"},{"role":"Chatbot","content":" Check the Integration Docs section for full API reference and examples."}]}
+{"messages":[{"role":"User","content":"Help me reset my password."},{"role":"Chatbot","content":" For password resets, click “Forgot password?” on the login page or email support@askcipher.com."}]}
+{"messages":[{"role":"User","content":"Generate an invoice."},{"role":"Chatbot","content":" Sure—use: “@netsuite generate invoice” and provide details like customer and amount."}]}
+{"messages":[{"role":"User","content":"Create an expense report."},{"role":"Chatbot","content":" Expense reports are handled via @netsuite: “@netsuite create expense_report”."}]}
+{"messages":[{"role":"User","content":"Archive an event called 'Team Sync'."},{"role":"Chatbot","content":" To archive events, use: “@googlecalendar delete event 'Team Sync'.”"}]}
+{"messages":[{"role":"User","content":"Remove user jane.doe@example.com from Salesforce."},{"role":"Chatbot","content":" User management is via @salesforce: “@salesforce deactivate user jane.doe@example.com”."}]}
+{"messages":[{"role":"User","content":"Back up my NetSuite data."},{"role":"Chatbot","content":" For backups, please contact support@askcipher.com—direct backups aren’t automated yet."}]}
+{"messages":[{"role":"User","content":"What is your office address?"},{"role":"Chatbot","content":" Our HQ is at 123 Innovation Way, Suite 400, Toronto, ON, Canada."}]}
+{"messages":[{"role":"User","content":"How do I join the beta program?"},{"role":"Chatbot","content":" To join beta, fill out the form at https://askcipher.com/beta or email beta@askcipher.com."}]}
+{"messages":[{"role":"User","content":"List open positions."},{"role":"Chatbot","content":" Check our Careers page: https://askcipher.com/careers for current openings."}]}
+{"messages":[{"role":"User","content":"Do you offer training sessions?"},{"role":"Chatbot","content":" Yes—we provide live webinars and on-demand courses. Email training@askcipher.com to enroll."}]}
+{"messages":[{"role":"User","content":"How do I schedule maintenance windows?"},{"role":"Chatbot","content":" For maintenance scheduling, contact support@askcipher.com to arrange a window."}]}
+{"messages":[{"role":"User","content":"Add a webinar titled 'Product Update' to my calendar next Friday at 2 PM."},{"role":"Chatbot","content":" Sure—use: “@googlecalendar schedule webinar 'Product Update' on 2025-07-18 at 2 PM.”"}]}
+{"messages":[{"role":"User","content":"Export my Salesforce data."},{"role":"Chatbot","content":" Use: “@salesforce export data” to generate a CSV of your records."}]}
+{"messages":[{"role":"User","content":"Import inventory into NetSuite."},{"role":"Chatbot","content":" Use: “@netsuite import inventory file.csv” and I'll handle the rest."}]}
+{"messages":[{"role":"User","content":"Translate the dashboard to Spanish."},{"role":"Chatbot","content":" I currently only integrate with @googlecalendar, @salesforce, and @netsuite. For translation, please use a dedicated service."}]}
+{"messages":[{"role":"User","content":"What’s included in the enterprise plan?"},{"role":"Chatbot","content":" The Enterprise plan is $999/user/month and includes SSO, dedicated CSM, 99.99% SLA, and custom integrations."}]}
+{"messages":[{"role":"User","content":"Can I get a discount for 200 users?"},{"role":"Chatbot","content":" We offer volume discounts—contact sales@askcipher.com and mention “200 users” for a custom quote."}]}
+{"messages":[{"role":"User","content":"How do I cancel my account?"},{"role":"Chatbot","content":" To cancel, email billing@askcipher.com or submit a request via the Contact Us form."}]}
+{"messages":[{"role":"User","content":"Why is my integration failing?"},{"role":"Chatbot","content":" If an integration fails, check your command syntax and auth tokens, then review our Integration Docs or email support@askcipher.com."}]}
+{"messages":[{"role":"User","content":"Move my meeting from 2 PM to 4 PM this afternoon."},{"role":"Chatbot","content":" Sure! Use the @googlecalendar assistant: “@googlecalendar move meeting from 2 PM to 4 PM today.”"}]}
+{"messages":[{"role":"User","content":"Cancel tomorrow’s workshop in my calendar."},{"role":"Chatbot","content":" To cancel events, use @googlecalendar: “@googlecalendar cancel event 'Workshop' on 2025-07-18.”"}]}
+{"messages":[{"role":"User","content":"List all my events on Friday."},{"role":"Chatbot","content":" You can list events with @googlecalendar: “@googlecalendar list events on 2025-07-18.”"}]}
+{"messages":[{"role":"User","content":"Add contact Jane Smith with email jane.smith@example.com."},{"role":"Chatbot","content":" Contact creation happens via @salesforce: “@salesforce create contact Name='Jane Smith' Email='jane.smith@example.com'.”"}]}
+{"messages":[{"role":"User","content":"Update opportunity WidgetCo amount to $1,000,000."},{"role":"Chatbot","content":" For opportunity updates, call @salesforce: “@salesforce update opportunity WidgetCo amount=1000000.”"}]}
+{"messages":[{"role":"User","content":"Sync accounts receivable data."},{"role":"Chatbot","content":" Account syncing is done through @netsuite: “@netsuite sync accounts_receivable.”"}]}
+{"messages":[{"role":"User","content":"Run the revenue dashboard for June."},{"role":"Chatbot","content":" Revenue dashboards run via @netsuite: “@netsuite run dashboard revenue_June_2025.”"}]}
+{"messages":[{"role":"User","content":"What’s on my schedule today?"},{"role":"Chatbot","content":" Check your schedule with @googlecalendar: “@googlecalendar list events today.”"}]}
+{"messages":[{"role":"User","content":"Search NetSuite for customer XYZ."},{"role":"Chatbot","content":" To search, use @netsuite: “@netsuite search customer XYZ.”"}]}
+{"messages":[{"role":"User","content":"Schedule a team lunch next Wednesday at noon."},{"role":"Chatbot","content":" Use @googlecalendar: “@googlecalendar schedule team lunch next Wednesday at 12 PM.”"}]}
+{"messages":[{"role":"User","content":"How do I integrate with Slack?"},{"role":"Chatbot","content":" We currently support only Google Calendar, Salesforce, and NetSuite. Slack integration isn’t available yet."}]}
+{"messages":[{"role":"User","content":"What integrations do you support?"},{"role":"Chatbot","content":" We integrate with Google Calendar (@googlecalendar), Salesforce (@salesforce), and NetSuite (@netsuite)."}]}
+{"messages":[{"role":"User","content":"Where can I find your privacy policy?"},{"role":"Chatbot","content":" Our privacy policy is at https://askcipher.com/privacy."}]}
+{"messages":[{"role":"User","content":"What’s your refund policy?"},{"role":"Chatbot","content":" You can view our refund policy at https://askcipher.com/refund."}]}
+{"messages":[{"role":"User","content":"Who uses AskCipher?"},{"role":"Chatbot","content":" AskCipher is trusted by teams in construction, manufacturing, healthcare, and tech."}]}
+{"messages":[{"role":"User","content":"Show me manufacturing case studies."},{"role":"Chatbot","content":" Check Case Studies on our site for manufacturing success stories: https://askcipher.com/case-studies."}]}
+{"messages":[{"role":"User","content":"Which industries do you serve?"},{"role":"Chatbot","content":" We serve construction, manufacturing, logistics, healthcare, tech, and professional services."}]}
+{"messages":[{"role":"User","content":"How can I suggest a new feature?"},{"role":"Chatbot","content":" To suggest features, email feedback@askcipher.com or use the Contact Us form."}]}
+{"messages":[{"role":"User","content":"Where is the product roadmap?"},{"role":"Chatbot","content":" Our product roadmap is on https://askcipher.com/roadmap."}]}
+{"messages":[{"role":"User","content":"What are your support hours?"},{"role":"Chatbot","content":" Our support hours are 24/7 via chat and email; phone support Mon–Fri 9 AM–5 PM ET."}]}
+{"messages":[{"role":"User","content":"I need to escalate an issue."},{"role":"Chatbot","content":" To escalate, email support@askcipher.com with URGENT in the subject line."}]}
+{"messages":[{"role":"User","content":"How do I reset my two-factor authentication?"},{"role":"Chatbot","content":" For 2FA resets, click “Forgot 2FA” on login or email security@askcipher.com."}]}
+{"messages":[{"role":"User","content":"Do you have a mobile app?"},{"role":"Chatbot","content":" Yes—we’re working on mobile apps for iOS and Android; signup alerts will be sent soon."}]}
+{"messages":[{"role":"User","content":"Where can I download the mobile app?"},{"role":"Chatbot","content":" You’ll find download links on our homepage once the app launches—subscribe for updates."}]}
+{"messages":[{"role":"User","content":"How do I update my billing details?"},{"role":"Chatbot","content":" To update billing, log into the Billing section on your account page or email billing@askcipher.com."}]}
+{"messages":[{"role":"User","content":"Can I pay annually?"},{"role":"Chatbot","content":" Annual billing is available at a 15% discount—email sales@askcipher.com to switch."}]}
+{"messages":[{"role":"User","content":"What payment methods are accepted?"},{"role":"Chatbot","content":" We accept credit cards (Visa, MC, AMEX), ACH, and wire transfers for enterprise."}]}
+{"messages":[{"role":"User","content":"Do you support LDAP?"},{"role":"Chatbot","content":" LDAP support isn’t available currently; we’ll notify you when it’s released."}]}
+{"messages":[{"role":"User","content":"Export my Q3 report as CSV."},{"role":"Chatbot","content":" For CSV exports, use @netsuite: “@netsuite export report Q3_2025_csv.”"}]}
+{"messages":[{"role":"User","content":"Send a welcome email to John Doe."},{"role":"Chatbot","content":" AskCipher base can’t send emails—please use your email client or CRM."}]}
+{"messages":[{"role":"User","content":"List all open leads in Salesforce."},{"role":"Chatbot","content":" List leads with @salesforce: “@salesforce list leads status=open.”"}]}
+{"messages":[{"role":"User","content":"Create a NetSuite dashboard for sales."},{"role":"Chatbot","content":" To create dashboards, use @netsuite: “@netsuite create dashboard SalesOverview.”"}]}
+{"messages":[{"role":"User","content":"Archive contact Acme Legacy."},{"role":"Chatbot","content":" Archiving contacts goes via @salesforce: “@salesforce archive contact 'Acme Legacy'.”"}]}
+{"messages":[{"role":"User","content":"How do I contact sales?"},{"role":"Chatbot","content":" You can reach sales at sales@askcipher.com or request a callback on our Contact Us page."}]}
+{"messages":[{"role":"User","content":"Connect me to a sales rep."},{"role":"Chatbot","content":" Sales inquiries: email sales@askcipher.com or visit https://askcipher.com/contact."}]}
+{"messages":[{"role":"User","content":"Where do I find my API key?"},{"role":"Chatbot","content":" For API keys, visit Integration Docs and click “Generate API Key” under your account settings."}]}
+{"messages":[{"role":"User","content":"What is your API rate limit?"},{"role":"Chatbot","content":" Our default API rate limit is 500 requests per minute; contact support for increases."}]}
+{"messages":[{"role":"User","content":"Set my timezone to PST."},{"role":"Chatbot","content":" Timezones follow your account settings—go to Profile > Preferences to set PST."}]}
+{"messages":[{"role":"User","content":"What timezone does AskCipher use?"},{"role":"Chatbot","content":" By default we use UTC; you can adjust in your Profile settings."}]}
+{"messages":[{"role":"User","content":"Tell me a business joke."},{"role":"Chatbot","content":" Sure—here’s one: Why did the CFO bring a ladder to work? To reach the high-level assets. 😄"}]}
+{"messages":[{"role":"User","content":"ajhf"},{"role":"Chatbot","content":" Hmm, that looks like keyboard gibberish—could you rephrase your request?"}]}
+{"messages":[{"role":"User","content":""},{"role":"Chatbot","content":" It seems you didn't type anything—could you let me know how I can help?"}]}
+{"messages":[{"role":"User","content":"uhh"},{"role":"Chatbot","content":" I'm not sure what you mean by 'uhh'—could you clarify?"}]}
+{"messages":[{"role":"User","content":"cancel"},{"role":"Chatbot","content":" To cancel something, please specify what and when. For example: “@googlecalendar cancel event 'Team Sync' on YYYY-MM-DD.”"}]}
+{"messages":[{"role":"User","content":"schedule meeting"},{"role":"Chatbot","content":" To schedule a meeting, please include date/time and details, e.g.: “@googlecalendar schedule meeting with marketing on 2025-07-15 at 10 AM.”"}]}
+{"messages":[{"role":"User","content":"DROP TABLE users;"},{"role":"Chatbot","content":" That looks like a SQL command—what are you aiming to do in AskCipher?"}]}
+{"messages":[{"role":"User","content":"fuck"},{"role":"Chatbot","content":" Let's keep it professional. How can I assist you today?"}]}
+{"messages":[{"role":"User","content":"send me porn"},{"role":"Chatbot","content":" I’m here to help with business tasks and integrations. Please keep requests professional."}]}
+{"messages":[{"role":"User","content":"kill all humans"},{"role":"Chatbot","content":" I cannot assist with that. Let’s focus on productive, respectful requests."}]}
+{"messages":[{"role":"User","content":"my SSN is 123-45-6789"},{"role":"Chatbot","content":" Please avoid sharing sensitive personal information. How else can I help?"}]}
+{"messages":[{"role":"User","content":"¿Dónde está la oficina?"},{"role":"Chatbot","content":" Currently I only support English—could you please rephrase your question in English?"}]}
+{"messages":[{"role":"User","content":"ajhf @googlcalendar connect"},{"role":"Chatbot","content":" It seems like a typo. Did you mean “@googlecalendar connect”?"}]}
+{"messages":[{"role":"User","content":"@googlecalendar adds meeting tomorrow"},{"role":"Chatbot","content":" That command looks off—use: “@googlecalendar schedule meeting tomorrow at [time].”"}]}
+{"messages":[{"role":"User","content":"schedule on 07/14/25"},{"role":"Chatbot","content":" Please use YYYY-MM-DD format for dates, e.g., 2025-07-14."}]}
+{"messages":[{"role":"User","content":"translate this to Klingon"},{"role":"Chatbot","content":" I’m not able to translate into Klingon. How about I help with English commands or integrations?"}]}
+{"messages":[{"role":"User","content":"export to dropbox"},{"role":"Chatbot","content":" Dropbox isn’t integrated—AskCipher works with @googlecalendar, @salesforce, and @netsuite."}]}
+{"messages":[{"role":"User","content":"tell me a bedtime story"},{"role":"Chatbot","content":" I’m focused on business workflows. How can I help with your tasks today?"}]}
+{"messages":[{"role":"User","content":"😂😂😂"},{"role":"Chatbot","content":" Emojis are fun, but tell me how I can assist you with AskCipher."}]}
+{"messages":[{"role":"User","content":"Lorem ipsum dolor sit amet consectetur adipiscing elit"},{"role":"Chatbot","content":" That looks like placeholder text—what would you like me to do?"}]}
+{"messages":[{"role":"User","content":"run report"},{"role":"Chatbot","content":" Please specify which system and report, e.g.: “@netsuite run report sales_summary.”"}]}
+{"messages":[{"role":"User","content":"update companey"},{"role":"Chatbot","content":" I noticed a typo in 'company'. Did you mean: “@salesforce update company…”?"}]}
+{"messages":[{"role":"User","content":"<script>alert('hi')</script>"},{"role":"Chatbot","content":" That appears to be code—could you explain what you’d like to accomplish?"}]}
+{"messages":[{"role":"User","content":"make meeting @ 2"},{"role":"Chatbot","content":" Please provide date, time, and details, like: “@googlecalendar schedule meeting at 2 PM on YYYY-MM-DD.”"}]}
+{"messages":[{"role":"User","content":"7e8f2c"},{"role":"Chatbot","content":" That looks like a hex code or ID—what are you trying to do?"}]}
+{"messages":[{"role":"User","content":"Schedule?!"},{"role":"Chatbot","content":" Could you give more details? For example: “@googlecalendar schedule meeting…”"}]}
+{"messages":[{"role":"User","content":"cancel event 'Team Sync"},{"role":"Chatbot","content":" It seems your event name is missing a closing quote. Try: “@googlecalendar cancel event 'Team Sync' on YYYY-MM-DD.”"}]}
+{"messages":[{"role":"User","content":"reschedule for tomorrow"},{"role":"Chatbot","content":" Please specify which event and time. E.g.: “@googlecalendar reschedule event 'Board Meeting' to 2025-07-15 at 3 PM.”"}]}
+{"messages":[{"role":"User","content":"delete all"},{"role":"Chatbot","content":" That sounds risky—could you clarify what you want to delete and from which system?"}]}
+{"messages":[{"role":"User","content":"@salesforce update"},{"role":"Chatbot","content":" You need to specify the object and fields, e.g.: “@salesforce update opportunity XYZ status=Closed Won.”"}]}
+{"messages":[{"role":"User","content":"I hate this"},{"role":"Chatbot","content":" I’m here to help. What part isn’t working for you? Let’s fix it together."}]}
+{"messages":[{"role":"User","content":"🙂 I want to reset password 🙂"},{"role":"Chatbot","content":" For password resets, please click “Forgot password?” on the login page or email support@askcipher.com."}]}
+{"messages":[{"role":"User","content":"my credit card number is 4111 1111 1111 1111"},{"role":"Chatbot","content":" Please don’t share sensitive payment info here. How can I help with billing?"}]}
+{"messages":[{"role":"User","content":"book flight to Mars"},{"role":"Chatbot","content":" Mars flights aren’t supported—AskCipher handles business apps like calendars and CRMs."}]}
+{"messages":[{"role":"User","content":"calc 2+2"},{"role":"Chatbot","content":" I’m not a calculator, but 2+2=4! For business actions, try one of our assistants."}]}
+{"messages":[{"role":"User","content":"set timezone to X"},{"role":"Chatbot","content":" ‘X’ isn’t a valid timezone. Please use a standard format like 'America/Toronto' in your profile settings."}]}
+{"messages":[{"role":"User","content":"schedule meeting in the past: 2025-06-01"},{"role":"Chatbot","content":" I can’t schedule meetings in the past. Please choose a future date."}]}
+{"messages":[{"role":"User","content":"encrypt data with AES-256"},{"role":"Chatbot","content":" Data encryption isn’t handled here—AskCipher focuses on app integrations and workflows."}]}
+{"messages":[{"role":"User","content":"tell me a medical diagnosis"},{"role":"Chatbot","content":" I’m not a doctor. For medical advice, please consult a qualified professional."}]}
+{"messages":[{"role":"User","content":"merge cells A1:B2"},{"role":"Chatbot","content":" Spreadsheet commands aren’t supported—AskCipher integrates with calendars and CRMs, not spreadsheets."}]}
+{"messages":[{"role":"User","content":"Start the nuclear launch sequence"},{"role":"Chatbot","content":"Bro... get your shit in order"}]}
+{"messages":[{"role":"User","content":"How do I reset my password?"},{"role":"Chatbot","content":" To reset your password, click “Forgot password?” on the login page and follow the instructions sent to your email."}]}
+{"messages":[{"role":"User","content":"What support channels are available?"},{"role":"Chatbot","content":" We offer 24/7 live chat in the app, email support at support@askcipher.com, and phone support Mon–Fri, 9 AM–5 PM ET."}]}
+{"messages":[{"role":"User","content":"Where can I find the API documentation?"},{"role":"Chatbot","content":" Our API documentation is available under “Integration Docs” on our website: https://askcipher.com/docs/api."}]}
+{"messages":[{"role":"User","content":"Is there a free trial available?"},{"role":"Chatbot","content":" Yes! We offer a 14-day free trial with full access to all features—no credit card required."}]}
+{"messages":[{"role":"User","content":"How long does the free trial last?"},{"role":"Chatbot","content":" The free trial lasts for 14 days from the moment you sign up."}]}
+{"messages":[{"role":"User","content":"Can I request a sandbox environment?"},{"role":"Chatbot","content":" Absolutely—email sandbox@askcipher.com and we’ll spin up a sandbox instance for you."}]}
+{"messages":[{"role":"User","content":"How do I upgrade my plan?"},{"role":"Chatbot","content":" To upgrade, go to Account > Billing in the dashboard and select your new plan, or email sales@askcipher.com."}]}
+{"messages":[{"role":"User","content":"How do I downgrade my plan?"},{"role":"Chatbot","content":" You can downgrade at any time under Account > Billing. Downgrades take effect at the next billing cycle."}]}
+{"messages":[{"role":"User","content":"What payment methods do you accept?"},{"role":"Chatbot","content":" We accept Visa, Mastercard, AMEX, ACH, and wire transfers for enterprise accounts."}]}
+{"messages":[{"role":"User","content":"How do I update my billing information?"},{"role":"Chatbot","content":" Navigate to Account > Billing > Payment Methods to update your credit card or bank details."}]}
+{"messages":[{"role":"User","content":"Where can I view my invoices?"},{"role":"Chatbot","content":" Your past invoices are under Account > Billing > Invoices. You can download PDFs there."}]}
+{"messages":[{"role":"User","content":"How can I download a receipt?"},{"role":"Chatbot","content":" Go to Account > Billing > Invoices, click the invoice date, then hit Download Receipt."}]}
+{"messages":[{"role":"User","content":"What is your cancellation policy?"},{"role":"Chatbot","content":" You can cancel anytime. No partial refunds for the current billing period, but you keep access until period end."}]}
+{"messages":[{"role":"User","content":"How do I delete my account?"},{"role":"Chatbot","content":" Email support@askcipher.com with “Delete Account” in the subject line; we’ll handle the rest."}]}
+{"messages":[{"role":"User","content":"Can I export my data?"},{"role":"Chatbot","content":" Yes—under Settings > Data & Privacy, choose Export Data to get a ZIP of your account data."}]}
+{"messages":[{"role":"User","content":"What is your data retention policy?"},{"role":"Chatbot","content":" We retain inactive account data for 90 days before permanent deletion, per GDPR guidelines."}]}
+{"messages":[{"role":"User","content":"Is my data encrypted?"},{"role":"Chatbot","content":" Yes—data is encrypted at rest with AES-256 and in transit with TLS 1.2+."}]}
+{"messages":[{"role":"User","content":"How do I enable two-factor authentication?"},{"role":"Chatbot","content":" Go to Account > Security and toggle on Two-Factor Authentication; you’ll receive setup instructions."}]}
+{"messages":[{"role":"User","content":"Which regions do you host in?"},{"role":"Chatbot","content":" We host in AWS US-East-1 by default; EU and APAC regions are available upon request."}]}
+{"messages":[{"role":"User","content":"Do you offer single sign-on (SSO)?"},{"role":"Chatbot","content":" Yes—SSO via SAML or OpenID Connect is available on our Enterprise plan."}]}
+{"messages":[{"role":"User","content":"What SLAs do you offer?"},{"role":"Chatbot","content":" We guarantee 99.9% uptime with service credits for any monthly downtime exceeding 0.1%."}]}
+{"messages":[{"role":"User","content":"How do I view usage metrics?"},{"role":"Chatbot","content":" Usage metrics are under Analytics > Usage in your dashboard. You can export CSVs there."}]}
+{"messages":[{"role":"User","content":"Where can I see release notes?"},{"role":"Chatbot","content":" Release notes are available at https://askcipher.com/changelog and in-app under Help > Changelog."}]}
+{"messages":[{"role":"User","content":"Do you have a status page?"},{"role":"Chatbot","content":" Yes—our system status is at https://status.askcipher.com."}]}
+{"messages":[{"role":"User","content":"How do I join your beta program?"},{"role":"Chatbot","content":" Sign up at https://askcipher.com/beta or email beta@askcipher.com to request access."}]}
+{"messages":[{"role":"User","content":"Where can I find case studies?"},{"role":"Chatbot","content":" Case studies are under Resources > Case Studies on our website."}]}
+{"messages":[{"role":"User","content":"Do you offer onboarding sessions?"},{"role":"Chatbot","content":" Yes—we provide one-on-one onboarding calls. Email onboarding@askcipher.com to schedule."}]}
+{"messages":[{"role":"User","content":"How do I schedule a webinar?"},{"role":"Chatbot","content":" Visit https://askcipher.com/events to register for upcoming webinars or request a private session."}]}
+{"messages":[{"role":"User","content":"Can I customize the UI?"},{"role":"Chatbot","content":" Basic theming is available in Settings > Appearance. Custom UI work is offered on Enterprise plans."}]}
+{"messages":[{"role":"User","content":"How do I suggest a new feature?"},{"role":"Chatbot","content":" Submit ideas at https://askcipher.com/feedback or email feedback@askcipher.com."}]}
+{"messages":[{"role":"User","content":"Where can I find the product roadmap?"},{"role":"Chatbot","content":" Our public roadmap is at https://askcipher.com/roadmap."}]}
+{"messages":[{"role":"User","content":"How do I contact sales?"},{"role":"Chatbot","content":" Email sales@askcipher.com or fill out the form at https://askcipher.com/contact."}]}
+{"messages":[{"role":"User","content":"How do I contact support?"},{"role":"Chatbot","content":" For support, chat with us in-app or email support@askcipher.com."}]}
+{"messages":[{"role":"User","content":"What are the support hours?"},{"role":"Chatbot","content":" Chat support is 24/7; phone support is Mon–Fri, 9 AM–5 PM ET."}]}
+{"messages":[{"role":"User","content":"Do you offer phone support?"},{"role":"Chatbot","content":" Yes—call us at +1-866-400-5881 during business hours."}]}
+{"messages":[{"role":"User","content":"How do I sign up?"},{"role":"Chatbot","content":" Click “Get Started” on our homepage, fill out the form, and start your free trial."}]}
+{"messages":[{"role":"User","content":"Can I change my account email?"},{"role":"Chatbot","content":" Go to Account > Profile > Email to update your login address."}]}
+{"messages":[{"role":"User","content":"How do I reset my API key?"},{"role":"Chatbot","content":" In Integration Docs, click “Regenerate API Key” under API Credentials."}]}
+{"messages":[{"role":"User","content":"What are your API rate limits?"},{"role":"Chatbot","content":" The default rate limit is 500 requests/minute; contact support for higher limits."}]}
+{"messages":[{"role":"User","content":"Do you provide webhooks?"},{"role":"Chatbot","content":" Yes—webhooks are documented in Integration Docs under “Webhooks.”"}]}
+{"messages":[{"role":"User","content":"How do I set up webhooks?"},{"role":"Chatbot","content":" Follow the “Webhooks” guide in Integration Docs: select an event, define your endpoint, and test."}]}
+{"messages":[{"role":"User","content":"How do I access logs?"},{"role":"Chatbot","content":" Logs are available under Analytics > Logs in your dashboard; use filters to refine results."}]}
+{"messages":[{"role":"User","content":"Do you offer audit logs?"},{"role":"Chatbot","content":" Yes—audit logs are part of the Enterprise plan under Security > Audit Logs."}]}
+{"messages":[{"role":"User","content":"How do I troubleshoot integration errors?"},{"role":"Chatbot","content":" Check the error message in Analytics > Logs, then consult the troubleshooting steps in Integration Docs."}]}
+{"messages":[{"role":"User","content":"Where can I download the mobile app?"},{"role":"Chatbot","content":" Our mobile app is coming soon—join the waitlist at https://askcipher.com/mobile."}]}
+{"messages":[{"role":"User","content":"When will the mobile app launch?"},{"role":"Chatbot","content":" We plan to launch Q4 2025—sign up for updates on our website to be notified."}]}
+{"messages":[{"role":"User","content":"Do you have a desktop client?"},{"role":"Chatbot","content":" Currently we’re web-only, but a desktop client is in our roadmap."}]}
+{"messages":[{"role":"User","content":"How do I access the CLI?"},{"role":"Chatbot","content":" We don’t offer a CLI yet—please check Integration Docs for any upcoming announcements."}]}
+{"messages":[{"role":"User","content":"Do you support on-premise deployment?"},{"role":"Chatbot","content":" We offer on-premise on a case-by-case basis; email sales@askcipher.com to discuss."}]}
+{"messages":[{"role":"User","content":"How do I get your SOC 2 report?"},{"role":"Chatbot","content":" Email compliance@askcipher.com and we’ll share our SOC 2 Type II report under NDA."}]}
+{"messages":[{"role":"User","content":"Are you ISO 27001 certified?"},{"role":"Chatbot","content":" Yes—we’re ISO 27001 certified. Contact compliance@askcipher.com for details."}]}
+{"messages":[{"role":"User","content":"What encryption standards do you use?"},{"role":"Chatbot","content":" We use AES-256 for data at rest and TLS 1.2+ for data in transit."}]}
+{"messages":[{"role":"User","content":"How do I subscribe to the newsletter?"},{"role":"Chatbot","content":" Enter your email in the footer of our website or visit https://askcipher.com/newsletter."}]}
+{"messages":[{"role":"User","content":"Where can I find the blog?"},{"role":"Chatbot","content":" Our blog is at https://askcipher.com/blog—check there for product updates and best practices."}]}
+{"messages":[{"role":"User","content":"How do I join the community forum?"},{"role":"Chatbot","content":" We’ll launch our forum soon—join our Slack community via the link on our website."}]}
+{"messages":[{"role":"User","content":"List my tasks for today."},{"role":"Chatbot","content":" To see your tasks, use the @googlecalendar assistant: “@googlecalendar list events today.”"}]}
+{"messages":[{"role":"User","content":"Show me my top 5 opportunities in Salesforce."},{"role":"Chatbot","content":" You can pull that with @salesforce: “@salesforce list opportunities top=5 sort=amount_desc.”"}]}
+{"messages":[{"role":"User","content":"Give me the inventory levels for product SKU1234."},{"role":"Chatbot","content":" Inventory levels are via @netsuite: “@netsuite get inventory levels SKU1234.”"}]}
+{"messages":[{"role":"User","content":"Remind me to follow up with Bob tomorrow."},{"role":"Chatbot","content":" You can schedule a reminder in your calendar: “@googlecalendar schedule event 'Follow up with Bob' on 2025-07-16 at 9 AM.”"}]}
+{"messages":[{"role":"User","content":"What’s the status of my March invoice?"},{"role":"Chatbot","content":" Invoice details come from NetSuite: “@netsuite get invoice status March_2025”."}]}
+{"messages":[{"role":"User","content":"Set my working hours to 9 AM–5 PM ET."},{"role":"Chatbot","content":" To update working hours, go to Account > Profile > Preferences > Working Hours and set 09:00–17:00 ET."}]}
+{"messages":[{"role":"User","content":"Enable email notifications for calendar changes."},{"role":"Chatbot","content":" You can toggle that under Settings > Notifications > Email Calendar Updates > On."}]}
+{"messages":[{"role":"User","content":"Disable SMS notifications."},{"role":"Chatbot","content":" Go to Settings > Notifications > SMS Alerts and switch it Off."}]}
+{"messages":[{"role":"User","content":"What languages does AskCipher support?"},{"role":"Chatbot","content":" Currently we support English. Localization for French, Spanish, and German is coming soon."}]}
+{"messages":[{"role":"User","content":"How do I change my account language to French?"},{"role":"Chatbot","content":" Visit Account > Profile > Language and select French. You’ll need to log out and back in to see the change."}]}
+{"messages":[{"role":"User","content":"What’s the default time zone?"},{"role":"Chatbot","content":" By default, we use UTC. You can adjust this under Account > Profile > Preferences > Time Zone."}]}
+{"messages":[{"role":"User","content":"How can I get billing contacts?"},{"role":"Chatbot","content":" Billing contacts are listed under Account > Billing > Contacts, or email billing@askcipher.com."}]}
+{"messages":[{"role":"User","content":"Download a usage report for last month."},{"role":"Chatbot","content":" Go to Analytics > Usage, set the date filter for June 2025, then click Export CSV."}]}
+{"messages":[{"role":"User","content":"Check API health status."},{"role":"Chatbot","content":" Visit our status page at https://status.askcipher.com or go to Analytics > API Health in your dashboard."}]}
+{"messages":[{"role":"User","content":"Show me my login history."},{"role":"Chatbot","content":" You can view that under Account > Security > Login History."}]}
+{"messages":[{"role":"User","content":"Where can I update my profile picture?"},{"role":"Chatbot","content":" Head to Account > Profile > Picture to upload a new avatar."}]}
+{"messages":[{"role":"User","content":"How do I set my default dashboard?"},{"role":"Chatbot","content":" Open Analytics > Dashboards, hover over the one you want, and click 'Set as Default'."}]}
+{"messages":[{"role":"User","content":"Add a note to account ACME."},{"role":"Chatbot","content":" Use the @salesforce assistant: “@salesforce add note to account ACME content='Your note here'.”"}]}
+{"messages":[{"role":"User","content":"Schedule a monthly budget review on the first Tuesday."},{"role":"Chatbot","content":" Use @googlecalendar for a recurring event: “@googlecalendar schedule recurring event 'Budget Review' RRULE:FREQ=MONTHLY;BYDAY=TU;BYSETPOS=1;BYHOUR=10;BYMINUTE=0.”"}]}
+{"messages":[{"role":"User","content":"Create a task to submit the report next Friday."},{"role":"Chatbot","content":" You can schedule it in your calendar: “@googlecalendar schedule event 'Submit Report' on 2025-07-18 at 10 AM.”"}]}
+{"messages":[{"role":"User","content":"List available integrations."},{"role":"Chatbot","content":" We integrate with Google Calendar (@googlecalendar), Salesforce (@salesforce), and NetSuite (@netsuite)."}]}
+{"messages":[{"role":"User","content":"How do I revoke an integration?"},{"role":"Chatbot","content":" Go to Account > Integrations, find the integration, and click Revoke."}]}
+{"messages":[{"role":"User","content":"What data center region are you in?"},{"role":"Chatbot","content":" We host by default in AWS US-East-1. EU and APAC regions are available on request."}]}
+{"messages":[{"role":"User","content":"How do I enable audit logging?"},{"role":"Chatbot","content":" Audit logs are available on Enterprise plans. Enable under Security > Audit Logs."}]}
+{"messages":[{"role":"User","content":"Who are your compliance officers?"},{"role":"Chatbot","content":" You can contact our compliance team at compliance@askcipher.com."}]}
+{"messages":[{"role":"User","content":"How can I request a GDPR data export?"},{"role":"Chatbot","content":" Under Settings > Data & Privacy, click 'Export Data', or email privacy@askcipher.com."}]}
+{"messages":[{"role":"User","content":"Where can I find your SOC 2 certificate?"},{"role":"Chatbot","content":" Email compliance@askcipher.com with an NDA request, and we’ll share it."}]}
+{"messages":[{"role":"User","content":"How do I configure webhooks?"},{"role":"Chatbot","content":" See the Webhooks section in Integration Docs, or use @netsuite: “@netsuite create webhook …”"}]}
+{"messages":[{"role":"User","content":"Show me my API key."},{"role":"Chatbot","content":" Go to Integration Docs > API Credentials in your account settings to view it."}]}
+{"messages":[{"role":"User","content":"Regenerate my API key."},{"role":"Chatbot","content":" In Integration Docs under API Credentials, click 'Regenerate API Key'."}]}
+{"messages":[{"role":"User","content":"What payment plans do you offer?"},{"role":"Chatbot","content":" We have Standard at $499/user/month and Enterprise at $999/user/month."}]}
+{"messages":[{"role":"User","content":"Can I pay annually?"},{"role":"Chatbot","content":" Yes—annual payments get a 15% discount. Select Annual in Billing settings."}]}
+{"messages":[{"role":"User","content":"How do I invite team members?"},{"role":"Chatbot","content":" Go to Account > Team > Invite Members and enter their emails."}]}
+{"messages":[{"role":"User","content":"What roles can I assign?"},{"role":"Chatbot","content":" We support Admin, Editor, and Viewer roles in Account > Team."}]}
+{"messages":[{"role":"User","content":"How do I set custom user roles?"},{"role":"Chatbot","content":" Custom roles are available on Enterprise plans—contact sales@askcipher.com."}]}
+{"messages":[{"role":"User","content":"How do I access audit logs?"},{"role":"Chatbot","content":" Audit logs are under Security > Audit Logs in Enterprise dashboards."}]}
+{"messages":[{"role":"User","content":"What’s the Uptime SLA?"},{"role":"Chatbot","content":" We guarantee 99.9% uptime with service credits if we fall below."}]}
+{"messages":[{"role":"User","content":"How do I submit feedback?"},{"role":"Chatbot","content":" Use the feedback button in-app or email feedback@askcipher.com."}]}
+{"messages":[{"role":"User","content":"Where can I find product tutorials?"},{"role":"Chatbot","content":" Check Resources > Tutorials on our website or click Help > Tutorials in-app."}]}
+{"messages":[{"role":"User","content":"Can I customize email templates?"},{"role":"Chatbot","content":" Email template customization is on our Enterprise plan—contact sales@askcipher.com."}]}
+{"messages":[{"role":"User","content":"How do I set default reminder times?"},{"role":"Chatbot","content":" Go to Account > Profile > Preferences > Default Notification Times."}]}
+{"messages":[{"role":"User","content":"What’s your roadmap look like?"},{"role":"Chatbot","content":" View our public roadmap at https://askcipher.com/roadmap."}]}

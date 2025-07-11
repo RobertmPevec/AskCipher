@@ -53,30 +53,34 @@ export const fetchHostedModels = async (profile: Tables<"profiles">) => {
 }
 
 export const fetchOllamaModels = async () => {
-  try {
-    const response = await fetch(
-      process.env.NEXT_PUBLIC_OLLAMA_URL + "/api/tags"
-    )
+  // Disabled Ollama to reduce console errors in no-auth mode
+  return []
 
-    if (!response.ok) {
-      throw new Error(`Ollama server is not responding.`)
-    }
+  // Original implementation commented out:
+  // try {
+  //   const response = await fetch(
+  //     process.env.NEXT_PUBLIC_OLLAMA_URL + "/api/tags"
+  //   )
 
-    const data = await response.json()
+  //   if (!response.ok) {
+  //     throw new Error(`Ollama server is not responding.`)
+  //   }
 
-    const localModels: LLM[] = data.models.map((model: any) => ({
-      modelId: model.name as LLMID,
-      modelName: model.name,
-      provider: "ollama",
-      hostedId: model.name,
-      platformLink: "https://ollama.ai/library",
-      imageInput: false
-    }))
+  //   const data = await response.json()
 
-    return localModels
-  } catch (error) {
-    console.warn("Error fetching Ollama models: " + error)
-  }
+  //   const localModels: LLM[] = data.models.map((model: any) => ({
+  //     modelId: model.name as LLMID,
+  //     modelName: model.name,
+  //     provider: "ollama",
+  //     hostedId: model.name,
+  //     platformLink: "https://ollama.ai/library",
+  //     imageInput: false
+  //   }))
+
+  //   return localModels
+  // } catch (error) {
+  //   console.warn("Error fetching Ollama models: " + error)
+  // }
 }
 
 export const fetchOpenRouterModels = async () => {

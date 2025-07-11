@@ -1,13 +1,22 @@
 import { useChatHandler } from "@/components/chat/chat-hooks/use-chat-handler"
 import { ChatbotUIContext } from "@/context/context"
-import { IconInfoCircle, IconMessagePlus } from "@tabler/icons-react"
-import { FC, useContext } from "react"
+import {
+  IconInfoCircle,
+  IconMessagePlus,
+  IconEdit,
+  IconPencil
+} from "@tabler/icons-react"
+import { FC, useContext, useState } from "react"
 import { WithTooltip } from "../ui/with-tooltip"
+import { CreatePrompt } from "../sidebar/items/prompts/create-prompt"
+import { EditPromptsModal } from "../sidebar/items/prompts/edit-prompts-modal"
 
 interface ChatSecondaryButtonsProps {}
 
 export const ChatSecondaryButtons: FC<ChatSecondaryButtonsProps> = ({}) => {
   const { selectedChat } = useContext(ChatbotUIContext)
+  const [isCreatingPrompt, setIsCreatingPrompt] = useState(false)
+  const [isEditingPrompts, setIsEditingPrompts] = useState(false)
 
   const { handleNewChat } = useChatHandler()
 
@@ -71,7 +80,49 @@ export const ChatSecondaryButtons: FC<ChatSecondaryButtonsProps> = ({}) => {
               </div>
             }
           />
+
+          <WithTooltip
+            delayDuration={200}
+            display={<div>Create a new prompt</div>}
+            trigger={
+              <div className="mt-1">
+                <IconPencil
+                  className="cursor-pointer hover:opacity-50"
+                  size={24}
+                  onClick={() => setIsCreatingPrompt(true)}
+                />
+              </div>
+            }
+          />
+
+          <WithTooltip
+            delayDuration={200}
+            display={<div>Edit prompts</div>}
+            trigger={
+              <div className="mt-1">
+                <IconEdit
+                  className="cursor-pointer hover:opacity-50"
+                  size={24}
+                  onClick={() => setIsEditingPrompts(true)}
+                />
+              </div>
+            }
+          />
         </>
+      )}
+
+      {isCreatingPrompt && (
+        <CreatePrompt
+          isOpen={isCreatingPrompt}
+          onOpenChange={setIsCreatingPrompt}
+        />
+      )}
+
+      {isEditingPrompts && (
+        <EditPromptsModal
+          isOpen={isEditingPrompts}
+          onOpenChange={setIsEditingPrompts}
+        />
       )}
     </>
   )
