@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import {
   IconChevronDown,
@@ -13,6 +13,8 @@ import {
 } from "@tabler/icons-react"
 import { useTheme } from "next-themes"
 import Image from "next/image"
+import { googleOAuthService } from "@/lib/google-oauth"
+import { toast } from "sonner"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -35,7 +37,48 @@ export const TopNavigation = () => {
   const [isConnectionsModalOpen, setIsConnectionsModalOpen] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
+  const [isGoogleConnected, setIsGoogleConnected] = useState(false)
+  const [showDisconnectConfirm, setShowDisconnectConfirm] = useState(false)
   const { setTheme, theme } = useTheme()
+
+  useEffect(() => {
+    // Check if Google is already connected
+    const isConnected = googleOAuthService.isTokenValid()
+    setIsGoogleConnected(isConnected)
+
+    // Check if user just completed OAuth (look for a flag in URL or localStorage)
+    const urlParams = new URLSearchParams(window.location.search)
+    const justConnected = localStorage.getItem("google_just_connected")
+
+    if (justConnected === "true") {
+      localStorage.removeItem("google_just_connected")
+      toast.success("Successfully added your account!")
+    }
+  }, [])
+
+  const handleGoogleConnect = async () => {
+    try {
+      await googleOAuthService.initiateAuth()
+    } catch (error) {
+      console.error("Failed to initiate Google OAuth:", error)
+    }
+  }
+
+  const handleGoogleDisconnect = async () => {
+    try {
+      // For now, we'll use a mock user ID - in a real app, you'd get this from auth context
+      const mockUserId = "00000000-0000-0000-0000-000000000000"
+      await googleOAuthService.disconnect(mockUserId)
+      setIsGoogleConnected(false)
+      setShowDisconnectConfirm(false)
+
+      // Show success toast
+      toast.success("Successfully removed your account!")
+    } catch (error) {
+      console.error("Failed to disconnect Google account:", error)
+      toast.error("Failed to disconnect account. Please try again.")
+    }
+  }
 
   const handleThemeChange = () => {
     setTheme(theme === "light" ? "dark" : "light")
@@ -216,7 +259,19 @@ export const TopNavigation = () => {
                       </p>
                     </div>
                     <div className="flex items-center">
-                      <Button size="sm">Connect</Button>
+                      {isGoogleConnected ? (
+                        <Button
+                          size="sm"
+                          variant="destructive"
+                          onClick={() => setShowDisconnectConfirm(true)}
+                        >
+                          Disconnect
+                        </Button>
+                      ) : (
+                        <Button size="sm" onClick={handleGoogleConnect}>
+                          Connect
+                        </Button>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -348,6 +403,37 @@ export const TopNavigation = () => {
                 </div>
               </div>
             )}
+          </DialogContent>
+        </Dialog>
+
+        {/* Google Disconnect Confirmation Dialog */}
+        <Dialog
+          open={showDisconnectConfirm}
+          onOpenChange={setShowDisconnectConfirm}
+        >
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <DialogTitle>Disconnect Google Account</DialogTitle>
+            </DialogHeader>
+
+            <div className="space-y-4">
+              <p className="text-muted-foreground text-sm">
+                Are you sure you want to disconnect your Google account? This
+                will remove access to Gmail and Calendar features.
+              </p>
+
+              <div className="flex justify-end space-x-2">
+                <Button
+                  variant="outline"
+                  onClick={() => setShowDisconnectConfirm(false)}
+                >
+                  Cancel
+                </Button>
+                <Button variant="destructive" onClick={handleGoogleDisconnect}>
+                  Disconnect
+                </Button>
+              </div>
+            </div>
           </DialogContent>
         </Dialog>
       </div>
