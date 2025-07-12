@@ -81,8 +81,15 @@ export const TopNavigation = () => {
                 <div>
                   <div className="flex items-center gap-2">
                     <span>AskCipher v0.3</span>
-                    <span className="rounded-full bg-orange-100 px-2 py-0.5 text-xs font-medium text-orange-800 dark:bg-orange-900 dark:text-orange-300">
-                      beta
+                    <span
+                      className="rounded border px-1.5 py-0.5 text-xs font-medium"
+                      style={{
+                        color: "#eab305",
+                        borderColor: "#eab305",
+                        backgroundColor: "#713e11"
+                      }}
+                    >
+                      Beta
                     </span>
                   </div>
                   <div className="text-muted-foreground mt-1 text-xs">
@@ -103,6 +110,7 @@ export const TopNavigation = () => {
               className="ring-offset-background focus-visible:ring-ring border-input bg-background hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground order-1 hidden h-10 w-fit items-center justify-center gap-2 whitespace-nowrap rounded-md border px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 md:order-1 md:flex md:h-[34px] md:px-2 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0"
             >
               Add Connections
+              <IconChevronDown className="size-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="start" className="w-64">
@@ -127,7 +135,7 @@ export const TopNavigation = () => {
           open={isConnectionsModalOpen}
           onOpenChange={setIsConnectionsModalOpen}
         >
-          <DialogContent className="max-w-2xl">
+          <DialogContent className="flex max-h-[80vh] max-w-2xl flex-col">
             <DialogHeader>
               <DialogTitle>Manage Connections</DialogTitle>
               <p className="text-muted-foreground text-sm">
@@ -135,13 +143,13 @@ export const TopNavigation = () => {
               </p>
             </DialogHeader>
 
-            <div className="space-y-6">
+            <div className="flex-1 space-y-6 overflow-y-auto">
               <div>
                 <h3 className="mb-4 text-lg font-semibold">Add Connection</h3>
 
                 <div className="space-y-4">
                   {/* NetSuite */}
-                  <div className="flex items-start gap-4 rounded-lg border p-4">
+                  <div className="flex items-center gap-4 rounded-lg border p-4">
                     <div className="flex size-12 items-center justify-center rounded-lg border bg-white">
                       <Image
                         src="/netsuite.svg"
@@ -155,17 +163,17 @@ export const TopNavigation = () => {
                       <p className="text-muted-foreground mb-2 text-sm">
                         NetSuite Authentication
                       </p>
-                      <p className="text-muted-foreground mb-3 text-sm">
+                      <p className="text-muted-foreground text-sm">
                         Connect to your NetSuite instance to Cipher
                       </p>
-                      <Button size="sm" className="mt-2">
-                        Connect
-                      </Button>
+                    </div>
+                    <div className="flex items-center">
+                      <Button size="sm">Connect</Button>
                     </div>
                   </div>
 
                   {/* Salesforce */}
-                  <div className="flex items-start gap-4 rounded-lg border p-4">
+                  <div className="flex items-center gap-4 rounded-lg border p-4">
                     <div className="flex size-12 items-center justify-center rounded-lg border bg-white">
                       <Image
                         src="/salesforce.png"
@@ -179,17 +187,17 @@ export const TopNavigation = () => {
                       <p className="text-muted-foreground mb-2 text-sm">
                         Salesforce Authentication
                       </p>
-                      <p className="text-muted-foreground mb-3 text-sm">
+                      <p className="text-muted-foreground text-sm">
                         Connect to your Salesforce instance to Cipher
                       </p>
-                      <Button size="sm" className="mt-2">
-                        Connect
-                      </Button>
+                    </div>
+                    <div className="flex items-center">
+                      <Button size="sm">Connect</Button>
                     </div>
                   </div>
 
                   {/* Google Workspace */}
-                  <div className="flex items-start gap-4 rounded-lg border p-4">
+                  <div className="flex items-center gap-4 rounded-lg border p-4">
                     <div className="flex size-12 items-center justify-center rounded-lg border bg-white">
                       <Image
                         src="/google.png"
@@ -203,12 +211,12 @@ export const TopNavigation = () => {
                       <p className="text-muted-foreground mb-2 text-sm">
                         Google Workspace Authentication
                       </p>
-                      <p className="text-muted-foreground mb-3 text-sm">
+                      <p className="text-muted-foreground text-sm">
                         Connect to your Google Workspace to Cipher
                       </p>
-                      <Button size="sm" className="mt-2">
-                        Connect
-                      </Button>
+                    </div>
+                    <div className="flex items-center">
+                      <Button size="sm">Connect</Button>
                     </div>
                   </div>
                 </div>

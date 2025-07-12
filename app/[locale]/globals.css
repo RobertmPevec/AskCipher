@@ -114,7 +114,7 @@
 @layer utilities {
   .gradient-border-focus {
     transition: all 0.3s ease-in-out;
-    border: 2px solid hsl(var(--border));
+    border: 2px solid #9ca3af;
   }
   
   .gradient-border-focus:focus-within {
@@ -124,7 +124,23 @@
     transition: all 0.3s ease-in-out;
   }
   
+  .dark .gradient-border-focus {
+    border: 2px solid hsl(var(--border));
+  }
+  
   .dark .gradient-border-focus:focus-within {
+    background: linear-gradient(#09090B, #09090B) padding-box, 
+                linear-gradient(to right, #ffaa40, #9c40ff) border-box;
+    border: 2px solid transparent;
+  }
+  
+  .gradient-border-active {
+    background: linear-gradient(white, white) padding-box, 
+                linear-gradient(to right, #ffaa40, #9c40ff) border-box;
+    border: 2px solid transparent;
+  }
+  
+  .dark .gradient-border-active {
     background: linear-gradient(#09090B, #09090B) padding-box, 
                 linear-gradient(to right, #ffaa40, #9c40ff) border-box;
     border: 2px solid transparent;

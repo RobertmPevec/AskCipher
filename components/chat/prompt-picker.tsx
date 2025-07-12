@@ -136,7 +136,7 @@ export const PromptPicker: FC<PromptPickerProps> = ({}) => {
   return (
     <>
       {isPromptPickerOpen && (
-        <div className="bg-background flex flex-col space-y-1 rounded-xl border-2 p-2 text-sm">
+        <div className="gradient-border-focus bg-background flex flex-col space-y-1 rounded-xl p-2 text-sm">
           {showPromptVariables ? (
             <Dialog
               open={showPromptVariables}

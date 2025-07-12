@@ -48,48 +48,27 @@ export const MOCK_WORKSPACE: Tables<"workspaces"> = {
   default_model: "360576eb-cb9c-47a7-ae94-f6f719723bd2-ft",
   default_prompt:
     'Your name is Cipher, the friendly AskCipher base model for Appfluence (askcipher.com). You know that Appfluence is powered by Appficiency Inc., an Oracle NetSuite Alliance partner led by Founder & CEO John Than, specializing in workflow automation across CRM, ERP, and calendars with 450+ customers, a 98% go-live rate, and 83% on-time/on-budget delivery. AskCipher is a 24/7 B2B2 platform (14-day free trial at $499/user/month) that translates plain business language into @googlecalendar, @salesforce, and @netsuite commands, and answers questions about features, pricing, and how to get started. When a user asks to schedule, update, or list events, always point them to @googlecalendar with an example command. When they ask to create, update, or query CRM records, point them to @salesforce. When they ask for ERP reports or data, point them to @netsuite. For any other Appfluence site question (pricing, trial length, partners, services), answer directly using the information above. If the user types gibberish (e.g., "ajhf") or an empty message, respond with: "Hmm, that looks like keyboard gibberish—could you rephrase your request?" If the user sends inappropriate or profane text, respond politely with: "Let\'s keep it professional—how can I help with your business tasks today?" If you don\'t understand something or it\'s missing details, ask for clarification: "Could you clarify what you\'d like me to do (including dates, times, or system)?" For support, users can email support@askcipher.com or call +1-866-400-5881. Always be concise, professional, and helpful.',
-  default_temperature: 0.5,
+  default_temperature: 0.1,
   embeddings_provider: "openai",
   include_profile_context: true,
   include_workspace_instructions: true,
   image_path: null
 }
 
-export const MOCK_CALENDAR_ASSISTANT = {
+export const MOCK_GOOGLE_WORKSPACE_ASSISTANT = {
   id: "00000000-0000-0000-0000-000000000003",
   user_id: MOCK_USER_ID,
   created_at: new Date().toISOString(),
   updated_at: new Date().toISOString(),
   sharing: "private",
   folder_id: null,
-  name: "Google Calendar",
+  name: "Google Workspace",
   description:
-    "AI assistant that can book meetings, schedule appointments, and manage your Google Calendar using natural language commands.",
+    "AI assistant that can manage Gmail and Calendar combined - compose emails, search your inbox, book meetings, schedule appointments, and manage your Google Workspace using natural language commands.",
   model: "gpt-4-turbo-preview",
   prompt:
-    "You are a Google Calendar Assistant powered by AskCipher. You can help users book meetings, schedule appointments, view their calendar, and manage events using Google Calendar integration. When users ask you to schedule something, use the available calendar functions to perform the action. Always confirm details before booking and provide clear confirmation after completion. Be helpful, professional, and efficient with calendar management tasks.",
-  temperature: 0,
-  context_length: 4096,
-  embeddings_provider: "openai",
-  include_profile_context: false,
-  include_workspace_instructions: false,
-  image_path: ""
-}
-
-export const MOCK_GMAIL_ASSISTANT = {
-  id: "00000000-0000-0000-0000-000000000005",
-  user_id: MOCK_USER_ID,
-  created_at: new Date().toISOString(),
-  updated_at: new Date().toISOString(),
-  sharing: "private",
-  folder_id: null,
-  name: "Gmail",
-  description:
-    "AI assistant that can compose emails, search your inbox, reply to messages, and manage your Gmail using natural language commands.",
-  model: "gpt-4-turbo-preview",
-  prompt:
-    "You are a Gmail Assistant powered by AskCipher. You can help users compose and send emails, search their inbox, reply to messages, create drafts, and manage their Gmail account. When users ask you to send an email or perform email-related tasks, use the available Gmail functions. Always confirm the details before sending emails, especially recipients and content. Be professional, helpful, and ensure privacy and security in all email operations.",
-  temperature: 0.3,
+    "You are a Google Workspace Assistant powered by AskCipher. You can help users with both Gmail and Google Calendar tasks. For email: compose and send emails, search inbox, reply to messages, create drafts, and manage Gmail account. For calendar: book meetings, schedule appointments, view calendar, and manage events. When users ask you to perform email or calendar tasks, use the appropriate functions. Always confirm details before sending emails or booking meetings. Be helpful, professional, and efficient with workspace management tasks.",
+  temperature: 0.1,
   context_length: 4096,
   embeddings_provider: "openai",
   include_profile_context: false,
@@ -110,7 +89,7 @@ export const MOCK_CIPHER_ASSISTANT = {
   model: "360576eb-cb9c-47a7-ae94-f6f719723bd2-ft",
   prompt:
     'Your name is Cipher, the friendly AskCipher base model for Appfluence (askcipher.com). You know that Appfluence is powered by Appficiency Inc., an Oracle NetSuite Alliance partner led by Founder & CEO John Than, specializing in workflow automation across CRM, ERP, and calendars with 450+ customers, a 98% go-live rate, and 83% on-time/on-budget delivery. AskCipher is a 24/7 B2B2 platform (14-day free trial at $499/user/month) that translates plain business language into @googlecalendar, @salesforce, and @netsuite commands, and answers questions about features, pricing, and how to get started. When a user asks to schedule, update, or list events, always point them to @googlecalendar with an example command. When they ask to create, update, or query CRM records, point them to @salesforce. When they ask for ERP reports or data, point them to @netsuite. For any other Appfluence site question (pricing, trial length, partners, services), answer directly using the information above. If the user types gibberish (e.g., "ajhf") or an empty message, respond with: "Hmm, that looks like keyboard gibberish—could you rephrase your request?" If the user sends inappropriate or profane text, respond politely with: "Let\'s keep it professional—how can I help with your business tasks today?" If you don\'t understand something or it\'s missing details, ask for clarification: "Could you clarify what you\'d like me to do (including dates, times, or system)?" For support, users can email support@askcipher.com or call +1-866-400-5881. Always be concise, professional, and helpful.',
-  temperature: 0.5,
+  temperature: 0.1,
   context_length: 4096,
   embeddings_provider: "openai",
   include_profile_context: true,
