@@ -65,9 +65,31 @@ export const MOCK_CALENDAR_ASSISTANT = {
   name: "Google Calendar",
   description:
     "AI assistant that can book meetings, schedule appointments, and manage your Google Calendar using natural language commands.",
-  model: "command-r-plus",
-  prompt: "your name is the penis dwindler",
+  model: "gpt-4-turbo-preview",
+  prompt:
+    "You are a Google Calendar Assistant powered by AskCipher. You can help users book meetings, schedule appointments, view their calendar, and manage events using Google Calendar integration. When users ask you to schedule something, use the available calendar functions to perform the action. Always confirm details before booking and provide clear confirmation after completion. Be helpful, professional, and efficient with calendar management tasks.",
   temperature: 0,
+  context_length: 4096,
+  embeddings_provider: "openai",
+  include_profile_context: false,
+  include_workspace_instructions: false,
+  image_path: ""
+}
+
+export const MOCK_GMAIL_ASSISTANT = {
+  id: "00000000-0000-0000-0000-000000000005",
+  user_id: MOCK_USER_ID,
+  created_at: new Date().toISOString(),
+  updated_at: new Date().toISOString(),
+  sharing: "private",
+  folder_id: null,
+  name: "Gmail",
+  description:
+    "AI assistant that can compose emails, search your inbox, reply to messages, and manage your Gmail using natural language commands.",
+  model: "gpt-4-turbo-preview",
+  prompt:
+    "You are a Gmail Assistant powered by AskCipher. You can help users compose and send emails, search their inbox, reply to messages, create drafts, and manage their Gmail account. When users ask you to send an email or perform email-related tasks, use the available Gmail functions. Always confirm the details before sending emails, especially recipients and content. Be professional, helpful, and ensure privacy and security in all email operations.",
+  temperature: 0.3,
   context_length: 4096,
   embeddings_provider: "openai",
   include_profile_context: false,

@@ -11,7 +11,13 @@ import { Textarea } from "@/components/ui/textarea"
 import { ChatbotUIContext } from "@/context/context"
 import { deletePrompt, updatePrompt } from "@/db/prompts"
 import { Tables } from "@/supabase/types"
-import { IconEdit, IconTrash, IconCheck, IconX } from "@tabler/icons-react"
+import {
+  IconEdit,
+  IconTrash,
+  IconCheck,
+  IconX,
+  IconQuestionMark
+} from "@tabler/icons-react"
 import { FC, useContext, useState } from "react"
 import { toast } from "sonner"
 
@@ -28,6 +34,7 @@ export const EditPromptsModal: FC<EditPromptsModalProps> = ({
   const [editingPrompt, setEditingPrompt] = useState<string | null>(null)
   const [editedName, setEditedName] = useState("")
   const [editedContent, setEditedContent] = useState("")
+  const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null)
 
   const handleEditPrompt = (prompt: Tables<"prompts">) => {
     setEditingPrompt(prompt.id)
@@ -58,14 +65,23 @@ export const EditPromptsModal: FC<EditPromptsModalProps> = ({
   }
 
   const handleDeletePrompt = async (promptId: string) => {
-    if (!confirm("Are you sure you want to delete this prompt?")) return
-
     try {
       await deletePrompt(promptId)
       setPrompts(prompts.filter(p => p.id !== promptId))
+      setConfirmDeleteId(null)
       toast.success("Prompt deleted successfully!")
     } catch (error) {
       toast.error("Error deleting prompt: " + error)
+    }
+  }
+
+  const handleDeleteClick = (promptId: string) => {
+    if (confirmDeleteId === promptId) {
+      // Second click - actually delete
+      handleDeletePrompt(promptId)
+    } else {
+      // First click - show confirmation
+      setConfirmDeleteId(promptId)
     }
   }
 
@@ -148,10 +164,28 @@ export const EditPromptsModal: FC<EditPromptsModalProps> = ({
                         <Button
                           variant="outline"
                           size="sm"
-                          onClick={() => handleDeletePrompt(prompt.id)}
-                          className="text-red-600 hover:text-red-700"
+                          onClick={() => handleDeleteClick(prompt.id)}
+                          onMouseLeave={() => {
+                            if (confirmDeleteId === prompt.id) {
+                              setConfirmDeleteId(null)
+                            }
+                          }}
+                          className={
+                            confirmDeleteId === prompt.id
+                              ? "text-orange-600 hover:text-orange-700"
+                              : "text-red-600 hover:text-red-700"
+                          }
+                          title={
+                            confirmDeleteId === prompt.id
+                              ? "Are you sure you want to delete?"
+                              : "Delete"
+                          }
                         >
-                          <IconTrash size={16} />
+                          {confirmDeleteId === prompt.id ? (
+                            <IconQuestionMark size={16} />
+                          ) : (
+                            <IconTrash size={16} />
+                          )}
                         </Button>
                       </div>
                     </div>

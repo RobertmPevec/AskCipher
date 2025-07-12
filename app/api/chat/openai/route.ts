@@ -1,13 +1,12 @@
-import { checkApiKey, getServerProfile } from "@/lib/server/server-chat-helpers"
+import { CHAT_SETTING_LIMITS } from "@/lib/chat-setting-limits"
+import { checkApiKey } from "@/lib/server/server-chat-helpers"
 import { ChatSettings } from "@/types"
-import { OpenAIStream, StreamingTextResponse } from "ai"
-import { ServerRuntime } from "next"
-import OpenAI from "openai"
-import { ChatCompletionCreateParamsBase } from "openai/resources/chat/completions.mjs"
+import { OpenAI } from "openai"
+import { NextRequest, NextResponse } from "next/server"
 
-export const runtime: ServerRuntime = "edge"
+export const runtime = "edge"
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   const json = await request.json()
   const { chatSettings, messages } = json as {
     chatSettings: ChatSettings
@@ -15,44 +14,62 @@ export async function POST(request: Request) {
   }
 
   try {
-    const profile = await getServerProfile()
+    // Check for API key
+    const apiKey = process.env.OPENAI_API_KEY
+    if (!apiKey || apiKey === "YOUR_OPENAI_API_KEY_HERE") {
+      throw new Error(
+        "OpenAI API key not configured. Please add your API key to .env.local"
+      )
+    }
 
-    checkApiKey(profile.openai_api_key, "OpenAI")
+    checkApiKey(apiKey, "OpenAI")
 
     const openai = new OpenAI({
-      apiKey: profile.openai_api_key || "",
-      organization: profile.openai_organization_id
+      apiKey: apiKey
     })
 
     const response = await openai.chat.completions.create({
-      model: chatSettings.model as ChatCompletionCreateParamsBase["model"],
-      messages: messages as ChatCompletionCreateParamsBase["messages"],
+      model: chatSettings.model,
+      messages: messages,
       temperature: chatSettings.temperature,
       max_tokens:
-        chatSettings.model === "gpt-4-vision-preview" ||
-        chatSettings.model === "gpt-4o"
-          ? 4096
-          : null, // TODO: Fix
+        CHAT_SETTING_LIMITS[chatSettings.model]?.MAX_TOKEN_OUTPUT_LENGTH ||
+        4096,
       stream: true
     })
 
-    const stream = OpenAIStream(response)
-
-    return new StreamingTextResponse(stream)
-  } catch (error: any) {
-    let errorMessage = error.message || "An unexpected error occurred"
-    const errorCode = error.status || 500
-
-    if (errorMessage.toLowerCase().includes("api key not found")) {
-      errorMessage =
-        "OpenAI API Key not found. Please set it in your profile settings."
-    } else if (errorMessage.toLowerCase().includes("incorrect api key")) {
-      errorMessage =
-        "OpenAI API Key is incorrect. Please fix it in your profile settings."
-    }
-
-    return new Response(JSON.stringify({ message: errorMessage }), {
-      status: errorCode
+    // Create streaming response
+    const encoder = new TextEncoder()
+    const stream = new ReadableStream({
+      async start(controller) {
+        try {
+          for await (const chunk of response) {
+            const text = chunk.choices[0]?.delta?.content || ""
+            if (text) {
+              controller.enqueue(encoder.encode(text))
+            }
+          }
+          controller.close()
+        } catch (error) {
+          controller.error(error)
+        }
+      }
     })
+
+    return new Response(stream, {
+      headers: {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Transfer-Encoding": "chunked"
+      }
+    })
+  } catch (error: any) {
+    console.error("OpenAI API Error:", error)
+    return new NextResponse(
+      JSON.stringify({
+        message:
+          error.message || "An error occurred while calling the OpenAI API"
+      }),
+      { status: 500 }
+    )
   }
 }

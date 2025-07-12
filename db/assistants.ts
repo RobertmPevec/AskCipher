@@ -1,6 +1,10 @@
 import { supabase } from "@/lib/supabase/browser-client"
 import { TablesInsert, TablesUpdate } from "@/supabase/types"
-import { MOCK_CALENDAR_ASSISTANT, MOCK_CIPHER_ASSISTANT } from "@/lib/mock-data"
+import {
+  MOCK_CALENDAR_ASSISTANT,
+  MOCK_CIPHER_ASSISTANT,
+  MOCK_GMAIL_ASSISTANT
+} from "@/lib/mock-data"
 
 export const getAssistantById = async (assistantId: string) => {
   // Return mock assistants if ID matches
@@ -9,6 +13,9 @@ export const getAssistantById = async (assistantId: string) => {
   }
   if (assistantId === MOCK_CIPHER_ASSISTANT.id) {
     return MOCK_CIPHER_ASSISTANT
+  }
+  if (assistantId === MOCK_GMAIL_ASSISTANT.id) {
+    return MOCK_GMAIL_ASSISTANT
   }
 
   const { data: assistant, error } = await supabase
@@ -27,11 +34,15 @@ export const getAssistantById = async (assistantId: string) => {
 export const getAssistantWorkspacesByWorkspaceId = async (
   workspaceId: string
 ) => {
-  // Return mock data for assistants including both assistants
+  // Return mock data for assistants including all assistants
   return {
     id: workspaceId,
     name: "Default Workspace",
-    assistants: [MOCK_CALENDAR_ASSISTANT, MOCK_CIPHER_ASSISTANT]
+    assistants: [
+      MOCK_CALENDAR_ASSISTANT,
+      MOCK_GMAIL_ASSISTANT,
+      MOCK_CIPHER_ASSISTANT
+    ]
   }
 }
 
