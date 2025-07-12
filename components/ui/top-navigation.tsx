@@ -8,9 +8,11 @@ import {
   IconMessage,
   IconMoon,
   IconSun,
-  IconCheck
+  IconCheck,
+  IconX
 } from "@tabler/icons-react"
 import { useTheme } from "next-themes"
+import Image from "next/image"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,7 +24,8 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger
+  DialogTrigger,
+  DialogClose
 } from "@/components/ui/dialog"
 import { Textarea } from "@/components/ui/textarea"
 
@@ -30,17 +33,31 @@ export const TopNavigation = () => {
   const [feedbackText, setFeedbackText] = useState("")
   const [isFeedbackOpen, setIsFeedbackOpen] = useState(false)
   const [isConnectionsModalOpen, setIsConnectionsModalOpen] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false)
   const { setTheme, theme } = useTheme()
 
   const handleThemeChange = () => {
     setTheme(theme === "light" ? "dark" : "light")
   }
 
-  const handleFeedbackSubmit = () => {
+  const handleFeedbackSubmit = async () => {
+    setIsSubmitting(true)
+
+    // Simulate submission delay
+    await new Promise(resolve => setTimeout(resolve, 1000))
+
     // Handle feedback submission here
     console.log("Feedback submitted:", feedbackText)
     setFeedbackText("")
-    setIsFeedbackOpen(false)
+    setIsSubmitting(false)
+    setShowSuccessMessage(true)
+
+    // Hide success message after 2 seconds and close modal
+    setTimeout(() => {
+      setShowSuccessMessage(false)
+      setIsFeedbackOpen(false)
+    }, 2000)
   }
 
   return (
@@ -125,8 +142,13 @@ export const TopNavigation = () => {
                 <div className="space-y-4">
                   {/* NetSuite */}
                   <div className="flex items-start gap-4 rounded-lg border p-4">
-                    <div className="flex size-12 items-center justify-center rounded-lg border bg-blue-50">
-                      <span className="text-lg font-bold text-blue-600">N</span>
+                    <div className="flex size-12 items-center justify-center rounded-lg border bg-white">
+                      <Image
+                        src="/netsuite.svg"
+                        alt="NetSuite Logo"
+                        width={32}
+                        height={32}
+                      />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold">NetSuite</h4>
@@ -136,17 +158,21 @@ export const TopNavigation = () => {
                       <p className="text-muted-foreground mb-3 text-sm">
                         Connect to your NetSuite instance to Cipher
                       </p>
-                      <p className="rounded bg-orange-50 p-2 text-xs text-orange-600">
-                        Your organization must enable this connection. Please
-                        request your admin to enable it.
-                      </p>
+                      <Button size="sm" className="mt-2">
+                        Connect
+                      </Button>
                     </div>
                   </div>
 
                   {/* Salesforce */}
                   <div className="flex items-start gap-4 rounded-lg border p-4">
-                    <div className="flex size-12 items-center justify-center rounded-lg border bg-blue-50">
-                      <span className="text-lg font-bold text-blue-600">S</span>
+                    <div className="flex size-12 items-center justify-center rounded-lg border bg-white">
+                      <Image
+                        src="/salesforce.png"
+                        alt="Salesforce Logo"
+                        width={32}
+                        height={32}
+                      />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold">Salesforce</h4>
@@ -156,17 +182,21 @@ export const TopNavigation = () => {
                       <p className="text-muted-foreground mb-3 text-sm">
                         Connect to your Salesforce instance to Cipher
                       </p>
-                      <p className="rounded bg-orange-50 p-2 text-xs text-orange-600">
-                        Your organization must enable this connection. Please
-                        request your admin to enable it.
-                      </p>
+                      <Button size="sm" className="mt-2">
+                        Connect
+                      </Button>
                     </div>
                   </div>
 
                   {/* Google Workspace */}
                   <div className="flex items-start gap-4 rounded-lg border p-4">
-                    <div className="flex size-12 items-center justify-center rounded-lg border bg-red-50">
-                      <span className="text-lg font-bold text-red-600">G</span>
+                    <div className="flex size-12 items-center justify-center rounded-lg border bg-white">
+                      <Image
+                        src="/google.png"
+                        alt="Google Logo"
+                        width={32}
+                        height={32}
+                      />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold">Google Workspace</h4>
@@ -176,10 +206,9 @@ export const TopNavigation = () => {
                       <p className="text-muted-foreground mb-3 text-sm">
                         Connect to your Google Workspace to Cipher
                       </p>
-                      <p className="rounded bg-orange-50 p-2 text-xs text-orange-600">
-                        Your organization must enable this connection. Please
-                        request your admin to enable it.
-                      </p>
+                      <Button size="sm" className="mt-2">
+                        Connect
+                      </Button>
                     </div>
                   </div>
                 </div>
@@ -218,36 +247,99 @@ export const TopNavigation = () => {
           </DialogTrigger>
           <DialogContent className="sm:max-w-md">
             <DialogHeader>
-              <DialogTitle>Your Opinion Matters!</DialogTitle>
+              <div className="flex items-center justify-between">
+                <DialogTitle>Your Opinion Matters!</DialogTitle>
+                <DialogClose asChild>
+                  <Button variant="ghost" size="icon" className="size-6">
+                    <IconX className="size-4" />
+                  </Button>
+                </DialogClose>
+              </div>
             </DialogHeader>
-            <div className="space-y-4">
-              <p className="text-muted-foreground text-sm">
-                We would love to hear your thoughts on how we can improve
-                AskCipher.
-              </p>
 
-              <div className="space-y-2">
-                <label htmlFor="feedback" className="text-sm font-medium">
-                  What would you like us to know?
-                </label>
-                <Textarea
-                  id="feedback"
-                  placeholder="Your feedback..."
-                  value={feedbackText}
-                  onChange={e => setFeedbackText(e.target.value)}
-                  className="min-h-[100px]"
-                />
+            {showSuccessMessage ? (
+              <div className="flex flex-col items-center justify-center py-8">
+                <div className="mb-2 text-green-600">
+                  <svg
+                    className="size-12"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <p className="text-lg font-semibold">
+                  Thanks for your feedback!
+                </p>
+                <p className="text-muted-foreground mt-2 text-sm">
+                  We appreciate your input.
+                </p>
               </div>
+            ) : (
+              <div className="space-y-4">
+                <p className="text-muted-foreground text-sm">
+                  We would love to hear your thoughts on how we can improve
+                  AskCipher.
+                </p>
 
-              <div className="flex justify-end">
-                <Button
-                  onClick={handleFeedbackSubmit}
-                  disabled={!feedbackText.trim()}
-                >
-                  Send Response
-                </Button>
+                <div className="space-y-2">
+                  <label htmlFor="feedback" className="text-sm font-medium">
+                    What would you like us to know?
+                  </label>
+                  <div className="gradient-border-focus-textarea rounded-md">
+                    <Textarea
+                      id="feedback"
+                      placeholder="Your feedback..."
+                      value={feedbackText}
+                      onChange={e => setFeedbackText(e.target.value)}
+                      className="min-h-[100px] resize-none border-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                      disabled={isSubmitting}
+                    />
+                  </div>
+                </div>
+
+                <div className="flex justify-end">
+                  <Button
+                    onClick={handleFeedbackSubmit}
+                    disabled={!feedbackText.trim() || isSubmitting}
+                    className={`${theme === "dark" ? "bg-white text-black hover:bg-gray-200" : "bg-black text-white hover:bg-gray-800"}`}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <svg
+                          className="-ml-1 mr-2 size-4 animate-spin"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                            className="opacity-25"
+                          ></circle>
+                          <path
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            className="opacity-75"
+                          ></path>
+                        </svg>
+                        Sending...
+                      </>
+                    ) : (
+                      "Send Response"
+                    )}
+                  </Button>
+                </div>
               </div>
-            </div>
+            )}
           </DialogContent>
         </Dialog>
       </div>

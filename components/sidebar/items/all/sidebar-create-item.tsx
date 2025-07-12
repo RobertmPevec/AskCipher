@@ -200,6 +200,8 @@ export const SidebarCreateItem: FC<SidebarCreateItemProps> = ({
 
       setStateFunction((prevItems: any) => [...prevItems, newItem])
 
+      toast.success(`${contentType.slice(0, -1)} created successfully!`)
+
       onOpenChange(false)
       setCreating(false)
     } catch (error) {

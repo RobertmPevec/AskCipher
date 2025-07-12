@@ -60,6 +60,10 @@
     --ring: 0 0% 63.9%;
 
     --radius: 0.5rem;
+    
+    /* Custom sidebar and chat colors */
+    --sidebar-bg: #FAFAFA;
+    --chat-bg: #FFFFFF;
   }
 
   .dark {
@@ -91,6 +95,10 @@
     --destructive-foreground: 0 85.7% 97.3%;
 
     --ring: 0 0% 14.9%;
+    
+    /* Custom sidebar and chat colors */
+    --sidebar-bg: #18181B;
+    --chat-bg: #09090B;
   }
 }
 
@@ -100,5 +108,43 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .gradient-border-focus {
+    transition: all 0.3s ease-in-out;
+    border: 2px solid hsl(var(--border));
+  }
+  
+  .gradient-border-focus:focus-within {
+    background: linear-gradient(white, white) padding-box, 
+                linear-gradient(to right, #ffaa40, #9c40ff) border-box;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .dark .gradient-border-focus:focus-within {
+    background: linear-gradient(#09090B, #09090B) padding-box, 
+                linear-gradient(to right, #ffaa40, #9c40ff) border-box;
+    border: 2px solid transparent;
+  }
+  
+  .gradient-border-focus-textarea {
+    transition: all 0.3s ease-in-out;
+    border: 1px solid hsl(var(--border));
+  }
+  
+  .gradient-border-focus-textarea:focus-within {
+    background: linear-gradient(white, white) padding-box, 
+                linear-gradient(to right, #ffaa40, #9c40ff) border-box;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .dark .gradient-border-focus-textarea:focus-within {
+    background: linear-gradient(hsl(var(--background)), hsl(var(--background))) padding-box, 
+                linear-gradient(to right, #ffaa40, #9c40ff) border-box;
+    border: 2px solid transparent;
   }
 }

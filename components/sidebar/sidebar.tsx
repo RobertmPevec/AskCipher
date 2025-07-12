@@ -3,8 +3,6 @@ import { Tables } from "@/supabase/types"
 import { ContentType } from "@/types"
 import { FC, useContext } from "react"
 import { SIDEBAR_WIDTH } from "../ui/dashboard"
-import { WorkspaceSwitcher } from "../utility/workspace-switcher"
-import { WorkspaceSettings } from "../workspace/workspace-settings"
 import { SidebarContent } from "./sidebar-content"
 
 interface SidebarProps {
@@ -50,18 +48,17 @@ export const Sidebar: FC<SidebarProps> = ({ contentType, showSidebar }) => {
 
   return (
     <div
-      className="m-0 w-full space-y-2"
+      className="m-0 size-full space-y-2"
       style={{
         minWidth: showSidebar ? `${SIDEBAR_WIDTH}px` : "0px",
         maxWidth: showSidebar ? `${SIDEBAR_WIDTH}px` : "0px",
-        width: showSidebar ? `${SIDEBAR_WIDTH}px` : "0px"
+        width: showSidebar ? `${SIDEBAR_WIDTH}px` : "0px",
+        backgroundColor: "var(--sidebar-bg)"
       }}
     >
       <div className="flex h-full flex-col p-3">
         <div className="flex items-center border-b-2 pb-2">
-          <WorkspaceSwitcher />
-
-          <WorkspaceSettings />
+          <h2 className="text-lg font-semibold">AskCipher</h2>
         </div>
 
         {(() => {

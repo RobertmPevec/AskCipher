@@ -10,7 +10,7 @@ import { FC, useState } from "react"
 import { useSelectFileHandler } from "../chat/chat-hooks/use-select-file-handler"
 import { CommandK } from "../utility/command-k"
 
-export const SIDEBAR_WIDTH = 300
+export const SIDEBAR_WIDTH = 225
 
 interface DashboardProps {
   children: React.ReactNode
@@ -70,7 +70,8 @@ export const Dashboard: FC<DashboardProps> = ({ children }) => {
           // Sidebar
           minWidth: showSidebar ? `${SIDEBAR_WIDTH}px` : "0px",
           maxWidth: showSidebar ? `${SIDEBAR_WIDTH}px` : "0px",
-          width: showSidebar ? `${SIDEBAR_WIDTH}px` : "0px"
+          width: showSidebar ? `${SIDEBAR_WIDTH}px` : "0px",
+          backgroundColor: showSidebar ? "var(--sidebar-bg)" : "transparent"
         }}
       >
         {showSidebar && (
@@ -79,7 +80,8 @@ export const Dashboard: FC<DashboardProps> = ({ children }) => {
       </div>
 
       <div
-        className="bg-muted/50 relative flex w-screen min-w-[90%] grow flex-col sm:min-w-fit"
+        className="relative flex w-screen min-w-[90%] grow flex-col sm:min-w-fit"
+        style={{ backgroundColor: "var(--chat-bg)" }}
         onDrop={onFileDrop}
         onDragOver={onDragOver}
         onDragEnter={handleDragEnter}

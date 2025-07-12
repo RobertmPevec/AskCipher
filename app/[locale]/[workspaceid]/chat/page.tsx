@@ -26,7 +26,10 @@ export default function ChatPage() {
   const { theme } = useTheme()
 
   return (
-    <div className="flex h-full flex-col">
+    <div
+      className="flex h-full flex-col"
+      style={{ backgroundColor: "var(--chat-bg)" }}
+    >
       <TopNavigation />
 
       {chatMessages.length === 0 ? (
